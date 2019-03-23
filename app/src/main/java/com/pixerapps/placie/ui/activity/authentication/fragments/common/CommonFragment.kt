@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.pixerapps.placie.R
 import com.pixerapps.placie.mvp.BaseMvpFragment
+import com.pixerapps.placie.ui.activity.authentication.fragments.admin.AdminFragment
 import com.pixerapps.placie.ui.activity.authentication.fragments.student.StudentFragment
 import com.pixerapps.placie.utils.Config
 import kotlinx.android.synthetic.main.fragment_auth_common.*
@@ -32,7 +33,7 @@ View.OnClickListener{
             }
 
             R.id.adminAuth->{
-
+                Config.setFragment(AdminFragment(), activity, "admin_frag")
             }
         }
     }
