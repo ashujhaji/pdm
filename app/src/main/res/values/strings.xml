@@ -3,4 +3,11 @@
     <string name="start_as">Start as</string>
     <string name="student">Student</string>
     <string name="admin">Admin</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Register new user</string>
+    <string name="reg_uname">Create username</string>
+    <string name="reg_pwd">Create password</string>
+    <string name="inst_name">Institute name</string>
 </resources>
