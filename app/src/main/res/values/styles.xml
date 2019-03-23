@@ -13,4 +13,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="ToolbarStyle" parent="Theme.AppCompat">
+        <item name="android:textColor">@color/grey_500</item>
+        <item name="android:textColorSecondary">@color/grey_500</item>
+        <item name="android:fontFamily">@font/futura</item>
+    </style>
 </resources>

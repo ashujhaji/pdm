@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent" android:layout_height="match_parent">
-    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+    <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/toolbar_height">
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
                       android:orientation="vertical">
             <android.support.v7.widget.CardView android:layout_width="match_parent"
@@ -23,12 +28,15 @@
                                                                  android:layout_marginTop="@dimen/ten_dp"
                                                                  android:fontFamily="@font/futura"
                                                                  android:hint="@string/username"
+                                                                 android:id="@+id/loginUname"
                                                                  android:background="@drawable/bg_round_light"
                                                                  android:gravity="center"/>
                     <android.support.v7.widget.AppCompatEditText android:layout_width="@dimen/two_hundred_dp"
                                                                  android:layout_height="@dimen/forty_dp"
                                                                  android:layout_marginTop="@dimen/twenty_one_dp"
                                                                  android:hint="@string/password"
+                                                                 android:id="@+id/loginPwd"
+                                                                 android:inputType="textPassword"
                                                                  android:fontFamily="@font/futura"
                                                                  android:background="@drawable/bg_round_light"
                                                                  android:gravity="center"/>
@@ -36,6 +44,7 @@
                               android:text="@string/login"
                               android:gravity="center"
                               android:background="@drawable/bg_round_corner"
+                              android:id="@+id/login"
                               android:textColor="@color/white"
                               android:layout_marginTop="@dimen/twenty_one_dp"
                               android:layout_marginBottom="@dimen/thirty_dp"
@@ -68,11 +77,13 @@
                                                                  android:hint="@string/inst_name"
                                                                  android:background="@drawable/bg_round_light"
                                                                  android:gravity="center"
+                                                                 android:id="@+id/registerName"
                                                                  android:layout_marginBottom="@dimen/ten_dp"/>
                     <android.support.v7.widget.AppCompatEditText android:layout_width="@dimen/two_hundred_dp"
                                                                  android:layout_height="@dimen/forty_dp"
                                                                  android:layout_marginTop="@dimen/ten_dp"
                                                                  android:fontFamily="@font/futura"
+                                                                 android:id="@+id/registerUname"
                                                                  android:hint="@string/reg_uname"
                                                                  android:background="@drawable/bg_round_light"
                                                                  android:gravity="center"/>
@@ -80,6 +91,7 @@
                                                                  android:layout_height="@dimen/forty_dp"
                                                                  android:layout_marginTop="@dimen/twenty_one_dp"
                                                                  android:hint="@string/reg_pwd"
+                                                                 android:id="@+id/registerPwd"
                                                                  android:fontFamily="@font/futura"
                                                                  android:background="@drawable/bg_round_light"
                                                                  android:gravity="center"/>
@@ -89,10 +101,16 @@
                               android:background="@drawable/bg_round_corner"
                               android:textColor="@color/white"
                               android:layout_marginTop="@dimen/twenty_one_dp"
+                              android:id="@+id/register"
                               android:layout_marginBottom="@dimen/thirty_dp"
                               android:fontFamily="@font/futura"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </ScrollView>
-</RelativeLayout>
+    <ProgressBar android:layout_width="@dimen/toolbar_height"
+                 android:layout_height="@dimen/toolbar_height"
+                 android:layout_gravity="center"
+                 android:id="@+id/progressBar"
+                 android:visibility="gone"/>
+</android.support.design.widget.CoordinatorLayout>

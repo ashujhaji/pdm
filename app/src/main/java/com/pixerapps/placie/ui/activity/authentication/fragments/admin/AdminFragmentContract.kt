@@ -5,10 +5,12 @@ import com.pixerapps.placie.mvp.BaseMvpView
 
 object AdminFragmentContract {
     interface View : BaseMvpView {
-
+        fun showProgress()
+        fun showAlert(message : String)
     }
 
     interface Presenter : BaseMvpPresenter<View> {
-
+        fun login(username : String, password : String)
+        fun register(name : String, username: String, password: String)
     }
 }

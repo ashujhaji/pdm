@@ -23,6 +23,7 @@ View.OnClickListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         studentAuth.setOnClickListener(this)
+        adminAuth.setOnClickListener(this)
 
     }
 
