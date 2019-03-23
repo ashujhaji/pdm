@@ -3,4 +3,37 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--grey-->
+    <color name="white">#ffffff</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="blue_grey_100">#CFD8DC</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_800">#404040</color>
+
+    <!--yellow-->
+    <color name="yellow_light">#997a00</color>
+
+    <!--category colors-->
+    <color name="technology">#FF7777</color>
+    <color name="health">#5165FF </color>
+    <color name="food">#F4B400</color>
+    <color name="money">#0D904F </color>
+    <color name="parenting">#B01E5E</color>
+    <color name="study">#EC8223</color>
+    <color name="relationship">#e27690</color>
+    <color name="party">#38103f</color>
+    <color name="photography">#258dbf</color>
+    <color name="survival">#ddcb9e</color>
+    <color name="brainy">#22bed1</color>
+    <color name="humour">#febb3e</color>
+    <color name="life_tips">#6b58c1</color>
+    <color name="daily_life">#6683c1</color>
+    <color name="extras">#f19066</color>
 </resources>

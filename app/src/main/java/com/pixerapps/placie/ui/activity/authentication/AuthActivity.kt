@@ -7,8 +7,7 @@ import com.pixerapps.placie.mvp.BaseMvpActivity
 import com.pixerapps.placie.ui.activity.authentication.fragments.common.CommonFragment
 import com.pixerapps.placie.utils.Config
 
-class AuthActivity : BaseMvpActivity<AuthActivityContract.View, AuthActivityPresenter>(), AuthActivityContract.View,
-    View.OnClickListener {
+class AuthActivity : BaseMvpActivity<AuthActivityContract.View, AuthActivityPresenter>(), AuthActivityContract.View{
 
     override var presenter: AuthActivityPresenter = AuthActivityPresenter()
 
@@ -17,12 +16,6 @@ class AuthActivity : BaseMvpActivity<AuthActivityContract.View, AuthActivityPres
         setContentView(R.layout.activity_splash)
 
         showCommonFragment()
-    }
-
-    override fun onClick(v: View?) {
-        when(v?.id){
-
-        }
     }
 
     override fun showCommonFragment() {
