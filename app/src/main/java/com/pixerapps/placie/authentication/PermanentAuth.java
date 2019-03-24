@@ -1,6 +1,7 @@
 package com.pixerapps.placie.authentication;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import com.google.android.gms.auth.api.Auth;
@@ -17,6 +18,7 @@ public class PermanentAuth {
     private FirebaseAuth mAuth;
     private String TAG = "authstatus";
     private static PermanentAuth instance;
+    private ProgressDialog dialog;
 
     public static PermanentAuth getInstance() {
         if (instance == null) {
@@ -32,8 +34,9 @@ public class PermanentAuth {
             mAuth.signInWithCredential(credential)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
-//                            callback.onAuthSuccess();
+                            showProgressDialog("Authenticating user",activity);
                             Log.d(TAG, "linkWithCredential:success");
+                            ServerAuth.getInstance().startAuthenticate(activity,dialog,task.getResult().getUser());
                             Log.d("uuuid", task.getResult().getUser().getUid());
                         } else {
                             Log.d(TAG, "linkWithCredential:failure", task.getException());
@@ -59,5 +62,11 @@ public class PermanentAuth {
                 .build();
 
         return mGoogleApiClient;
+    }
+
+    private void showProgressDialog(String message, Activity activity){
+        dialog = new ProgressDialog(activity);
+        dialog.setMessage(message);
+        dialog.show();
     }
 }
