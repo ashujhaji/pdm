@@ -31,7 +31,7 @@
                                                  android:text="@string/admin"
                                                  android:gravity="center"
                                                  android:id="@+id/adminAuth"
-                                                 android:textColor="@color/colorPrimary"
+                                                 android:textColor="@color/blue_200"
                                                  android:background="@drawable/bg_round_light"
                                                  android:fontFamily="@font/futura"
                                                  android:layout_marginTop="@dimen/fifteen_sp"/>

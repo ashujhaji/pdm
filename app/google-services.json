@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "474286598193",
+    "firebase_url": "https://placie.firebaseio.com",
+    "project_id": "placie",
+    "storage_bucket": "placie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474286598193:android:2a5e386992d1902c",
+        "android_client_info": {
+          "package_name": "com.pixerapps.placie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474286598193-jorrdo0s6tbjno9jhgatsc92gdqg91eh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWfSStOAZaX2pzooO-WR1uuMX3sstPG04"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

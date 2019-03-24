@@ -1,6 +1,7 @@
 package com.pixerapps.placie.ui.activity.authentication.fragments.admin
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,8 @@ class AdminFragment : BaseMvpFragment<AdminFragmentContract.View, AdminFragmentP
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         login.setOnClickListener(this)
         register.setOnClickListener(this)
