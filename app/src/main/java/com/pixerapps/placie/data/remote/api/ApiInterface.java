@@ -1,7 +1,7 @@
 package com.pixerapps.placie.data.remote.api;
 
 
-import com.pixerapps.placie.UserPojo;
+import com.pixerapps.placie.model.UserPojo;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
