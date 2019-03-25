@@ -10,6 +10,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.authentication.AuthActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.user.home.HomeActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.splash.SplashActivity"
                   android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -17,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.user.home.HomeActivity"/>
     </application>
 
 </manifest>

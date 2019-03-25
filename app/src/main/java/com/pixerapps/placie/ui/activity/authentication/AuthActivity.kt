@@ -20,7 +20,7 @@ class AuthActivity : BaseMvpActivity<AuthActivityContract.View, AuthActivityPres
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_authentication)
 
         showCommonFragment()
     }

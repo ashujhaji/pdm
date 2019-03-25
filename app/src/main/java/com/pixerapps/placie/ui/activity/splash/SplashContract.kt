@@ -1,14 +1,15 @@
-package com.pixerapps.placie.ui.activity.user.home
+package com.pixerapps.placie.ui.activity.splash
 
+import android.app.Activity
 import com.pixerapps.placie.mvp.BaseMvpPresenter
 import com.pixerapps.placie.mvp.BaseMvpView
 
-object HomeActivityContract {
+object SplashContract {
     interface View : BaseMvpView {
 
     }
 
     interface Presenter : BaseMvpPresenter<View> {
-
+        fun moveToNextActivity(activity: Activity)
     }
 }
