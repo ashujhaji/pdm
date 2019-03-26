@@ -10,4 +10,6 @@
     <string name="reg_uname">Create username</string>
     <string name="reg_pwd">Create password</string>
     <string name="inst_name">Institute name</string>
+    <string name="feed">Feed</string>
+    <string name="profile">Profile</string>
 </resources>

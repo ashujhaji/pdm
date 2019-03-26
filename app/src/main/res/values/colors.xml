@@ -16,6 +16,8 @@
     <color name="grey_50">#FAFAFA</color>
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_200">#EEEEEE</color>
+    <color name="grey_400">#d9d9d9</color>
+    <color name="grey_450">#c2c2c2</color>
     <color name="grey_500">#9E9E9E</color>
     <color name="grey_600">#757575</color>
     <color name="grey_800">#404040</color>
