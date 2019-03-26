@@ -14,13 +14,13 @@
             android:drawableRight="@drawable/icon_search"
             android:elevation="2dp"
             android:fontFamily="@font/futura"
-            android:hint="Search Captions"
+            android:hint="Search People"
             android:imeOptions="actionSearch"
             android:paddingLeft="17dp"
             android:paddingRight="17dp"
             android:singleLine="true"
             android:textColorHint="@color/grey_400"
-            android:textSize="@dimen/fifteen_sp"
+            android:textSize="@dimen/eighteen_sp"
             android:textStyle="bold" />
 
     <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"

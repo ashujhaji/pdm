@@ -3,8 +3,8 @@
 
 <item
     android:drawable="@drawable/search"
-    android:width="@dimen/ten_dp"
-    android:height="@dimen/ten_dp"
+    android:width="@dimen/fifteen_sp"
+    android:height="@dimen/fifteen_sp"
     />
 
 </layer-list >

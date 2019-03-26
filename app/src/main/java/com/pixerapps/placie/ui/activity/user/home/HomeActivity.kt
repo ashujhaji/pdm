@@ -8,6 +8,7 @@ import android.view.View
 import com.pixerapps.placie.R
 import com.pixerapps.placie.mvp.BaseMvpActivity
 import com.pixerapps.placie.ui.activity.user.home.fragments.feed.FeedFragment
+import com.pixerapps.placie.ui.activity.user.home.fragments.profile.ProfileFragment
 import com.pixerapps.placie.utils.Config
 import kotlinx.android.synthetic.main.activity_user_home.*
 
@@ -38,6 +39,7 @@ class HomeActivity : BaseMvpActivity<HomeActivityContract.View, HomeActivityPres
                 return true
             }
             R.id.nav_profile -> {
+                presenter.loadFragment(ProfileFragment(),this,"profileFeedFragment")
                 return true
             }
             R.id.nav_info -> {

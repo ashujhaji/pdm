@@ -1,4 +1,4 @@
-package com.pixerapps.placie.ui.activity.user.home.fragments.feed
+package com.pixerapps.placie.ui.activity.user.home.fragments.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,10 @@ import android.view.WindowManager
 import com.pixerapps.placie.R
 import com.pixerapps.placie.mvp.BaseMvpFragment
 
-class FeedFragment : BaseMvpFragment<FeedContract.View,FeedPresenter>(),FeedContract.View {
-    override var presenter: FeedPresenter= FeedPresenter()
+class ProfileFragment : BaseMvpFragment<ProfileContract.View,ProfilePresenter>(),ProfileContract.View {
+    override var presenter: ProfilePresenter= ProfilePresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        activity!!.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
         return inflater.inflate(R.layout.fragment_user_feed,container,false)
     }
 
