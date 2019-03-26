@@ -12,5 +12,6 @@ object HomeActivityContract {
 
     interface Presenter : BaseMvpPresenter<View> {
         fun loadFragment(fragment:Fragment,fragmentActivity: FragmentActivity,fragName:String)
+        fun loadUserData()
     }
 }

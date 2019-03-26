@@ -7,4 +7,7 @@ object Constants {
     //---------------preferences key---------------------
     const val IS_USER_LOGGED_IN = "isUserLoggedIn"
     const val IS_ADMIN_LOGGED_IN = "isAdminLoggedIn"
+
+    const val USER_GID = "userGid"
+    const val USER_TOKEN = "userToken"
 }

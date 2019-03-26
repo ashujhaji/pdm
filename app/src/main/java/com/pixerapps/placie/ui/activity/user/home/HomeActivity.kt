@@ -25,6 +25,7 @@ class HomeActivity : BaseMvpActivity<HomeActivityContract.View, HomeActivityPres
         window.statusBarColor = Color.WHITE
 
         showDefaultFragment()
+        presenter.loadUserData()
 
         bottom_navigation.setOnNavigationItemSelectedListener(this)
     }

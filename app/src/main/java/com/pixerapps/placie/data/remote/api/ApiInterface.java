@@ -25,6 +25,13 @@ public interface ApiInterface {
             @Field("user_email") String user_email
     );
 
+    @FormUrlEncoded
+    @POST("api/get_user_details")
+    Call<UserPojo> getUserDetails(
+            @Field("user_gid") String user_gid,
+            @Field("token") String token
+    );
+
 //    //----------------------load all hacks-----------------------------
 //    @FormUrlEncoded
 //    @POST("/get_hack_all")

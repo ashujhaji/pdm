@@ -12,6 +12,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.pixerapps.placie.R;
+import com.pixerapps.placie.utils.Constants;
+import com.pixerapps.placie.utils.MyPref;
 
 public class PermanentAuth {
 
@@ -36,6 +38,7 @@ public class PermanentAuth {
                         if (task.isSuccessful()) {
                             showProgressDialog("Authenticating user",activity);
                             Log.d(TAG, "linkWithCredential:success");
+                            MyPref.putString(Constants.USER_GID,task.getResult().getUser().getUid());
                             ServerAuth.getInstance().startAuthenticate(activity,dialog,task.getResult().getUser());
                             Log.d("uuuid", task.getResult().getUser().getUid());
                         } else {

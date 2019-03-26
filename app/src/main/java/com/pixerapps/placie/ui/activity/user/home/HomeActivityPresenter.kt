@@ -3,6 +3,7 @@ package com.pixerapps.placie.ui.activity.user.home
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import com.pixerapps.placie.R
+import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.mvp.BaseMvpPresenterImpl
 
 class HomeActivityPresenter : BaseMvpPresenterImpl<HomeActivityContract.View>(), HomeActivityContract.Presenter {
@@ -15,4 +16,7 @@ class HomeActivityPresenter : BaseMvpPresenterImpl<HomeActivityContract.View>(),
         }
     }
 
+    override fun loadUserData() {
+        CurrentUserData.getInstance().getUserDetails()
+    }
 }

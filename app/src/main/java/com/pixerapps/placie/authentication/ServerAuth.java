@@ -36,6 +36,7 @@ public class ServerAuth {
                     if (response.isSuccessful()&&response.body().getSuccess())  {
                         progressDialog.dismiss();
                         MyPref.putBoolean(Constants.IS_USER_LOGGED_IN,true);
+                        MyPref.putString(Constants.USER_TOKEN,response.body().getData().get(0).getToken());
                         activity.startActivity(new Intent(activity,HomeActivity.class));
                     }else Log.d("authstatus",response.message());
                 }
