@@ -9,12 +9,6 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
 
-    //----------------------access pojo route------------------------
-    @FormUrlEncoded
-    @POST("api/pojo_route")
-    Call<String> getPojoAccess();
-
-
     //---------------------user routes----------------------------
     @FormUrlEncoded
     @POST("api/register")
@@ -31,22 +25,4 @@ public interface ApiInterface {
             @Field("user_gid") String user_gid,
             @Field("token") String token
     );
-
-//    //----------------------load all hacks-----------------------------
-//    @FormUrlEncoded
-//    @POST("/get_hack_all")
-//    Call<HackModel> getAllHacks(
-//            @Field("offset") int offset,
-//            @Field("limit") int limit
-//    );
-//
-//    //--------------------load category wise hacks----------------------
-//    @FormUrlEncoded
-//    @POST("/get_hack_by_category")
-//    Call<HackModel> getHackByCategory(
-//            @Field("category_name") String category,
-//            @Field("offset") int offset,
-//            @Field("limit") int limit
-//    );
-
 }
