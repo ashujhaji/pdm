@@ -20,5 +20,7 @@ data class UserData(
     @SerializedName("updated_at") val  updated_at :String,
     @SerializedName("college_name") val  college_name :String,
     @SerializedName("session") val  session :String,
-    @SerializedName("user_type") val  user_type :String
+    @SerializedName("user_type") val  user_type :String,
+    @SerializedName("user_bio") val user_bio : String,
+    @SerializedName("location") val location : String
 )

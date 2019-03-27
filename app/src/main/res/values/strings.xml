@@ -15,5 +15,5 @@
     <string name="notification">Notification</string>
     <string name="logout">Logout</string>
     <string name="no_notification">You don\'t have any notification</string>
-    <string name="no_notification_msg">You will make you up-to-date with all relevant opportunities</string>
+    <string name="no_notification_msg">We will make you up-to-date with all relevant opportunities</string>
 </resources>

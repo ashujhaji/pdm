@@ -1,6 +1,5 @@
 package com.pixerapps.placie.authentication;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -9,7 +8,6 @@ import com.pixerapps.placie.data.remote.api.ApiClient;
 import com.pixerapps.placie.data.remote.api.ApiInterface;
 import com.pixerapps.placie.model.UserData;
 import com.pixerapps.placie.model.UserPojo;
-import com.pixerapps.placie.ui.activity.user.home.HomeActivity;
 import com.pixerapps.placie.utils.Constants;
 import com.pixerapps.placie.utils.MyPref;
 import retrofit2.Call;
@@ -22,7 +20,7 @@ import java.util.List;
 public class CurrentUserData {
     private static CurrentUserData instance;
     private static FirebaseAuth mAuth;
-    private List<UserData> userData = new ArrayList<>();
+    public List<UserData> userData = new ArrayList<>();
 
     public static CurrentUserData getInstance() {
         mAuth = FirebaseAuth.getInstance();

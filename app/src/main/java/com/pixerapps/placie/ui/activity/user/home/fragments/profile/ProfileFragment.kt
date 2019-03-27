@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.view.*
 import com.pixerapps.placie.R
+import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.mvp.BaseMvpFragment
 import com.pixerapps.placie.ui.activity.user.home.HomeActivity
 import kotlinx.android.synthetic.main.fragment_user_profile.*
@@ -21,6 +22,7 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
         super.onViewCreated(view, savedInstanceState)
 
         showToolbar()
+        showUserDetails()
         showViepager()
     }
 
@@ -42,6 +44,15 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
         (activity as HomeActivity).setSupportActionBar(toolbar as Toolbar)
         (toolbar as Toolbar).title = ""
 
+    }
+
+    override fun showUserDetails() {
+        user_name.text = CurrentUserData.getInstance().userData[0].user_name
+        if (CurrentUserData.getInstance().userData[0].user_type != null && CurrentUserData.getInstance().userData[0].college_name != null && CurrentUserData.getInstance().userData[0].location != null) {
+            user_detail.text = CurrentUserData.getInstance().userData[0].user_type + "|" +
+                    CurrentUserData.getInstance().userData[0].college_name + "|" +
+                    CurrentUserData.getInstance().userData[0].location
+        }
     }
 
     override fun showViepager() {

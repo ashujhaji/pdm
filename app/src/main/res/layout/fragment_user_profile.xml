@@ -30,6 +30,7 @@
                                                              android:textStyle="bold"
                                                              android:textColor="@color/grey_800"
                                                              android:textSize="@dimen/eighteen_sp"
+                                                             android:id="@+id/user_name"
                                                              android:layout_marginTop="@dimen/ten_dp"/>
                 <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
                                                              android:layout_height="wrap_content"
@@ -39,6 +40,7 @@
                                                              android:gravity="center"
                                                              android:textColor="@color/grey_600"
                                                              android:paddingStart="@dimen/twenty_one_dp"
+                                                             android:id="@+id/user_detail"
                                                              android:paddingEnd="@dimen/twenty_one_dp"
                                                              android:text="Alumni|HMR Institute of technology and management"/>
             </LinearLayout>

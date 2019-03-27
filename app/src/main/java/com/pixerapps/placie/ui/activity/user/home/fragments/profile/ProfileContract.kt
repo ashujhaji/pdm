@@ -6,6 +6,7 @@ import com.pixerapps.placie.mvp.BaseMvpView
 object ProfileContract {
     interface View : BaseMvpView {
         fun showToolbar()
+        fun showUserDetails()
         fun showViepager()
     }
 
