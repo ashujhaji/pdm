@@ -47,11 +47,13 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
     }
 
     override fun showUserDetails() {
-        user_name.text = CurrentUserData.getInstance().userData[0].user_name
-        if (CurrentUserData.getInstance().userData[0].user_type != null && CurrentUserData.getInstance().userData[0].college_name != null && CurrentUserData.getInstance().userData[0].location != null) {
-            user_detail.text = CurrentUserData.getInstance().userData[0].user_type + "|" +
-                    CurrentUserData.getInstance().userData[0].college_name + "|" +
-                    CurrentUserData.getInstance().userData[0].location
+        if (CurrentUserData.getInstance().userData.size!=0){
+            user_name.text = CurrentUserData.getInstance().userData[0].user_name
+            if (CurrentUserData.getInstance().userData[0].user_type != null && CurrentUserData.getInstance().userData[0].college_name != null && CurrentUserData.getInstance().userData[0].location != null) {
+                user_detail.text = CurrentUserData.getInstance().userData[0].user_type + "|" +
+                        CurrentUserData.getInstance().userData[0].college_name + "|" +
+                        CurrentUserData.getInstance().userData[0].location
+            }
         }
     }
 

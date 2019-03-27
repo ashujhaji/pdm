@@ -5,6 +5,7 @@ import com.pixerapps.placie.mvp.BaseMvpView
 
 object ProfileAboutContract {
     interface View : BaseMvpView {
+        fun showUserData()
     }
 
     interface Presenter : BaseMvpPresenter<View> {

@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
-
-</android.support.constraint.ConstraintLayout>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@color/white">
+    <android.support.v7.widget.AppCompatImageView android:layout_width="@dimen/thirty_dp"
+                                                  android:layout_height="@dimen/thirty_dp"
+                                                  app:srcCompat="@drawable/icon_edit"
+                                                  android:layout_gravity="end"
+                                                  android:layout_margin="@dimen/ten_dp"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_marginTop="@dimen/forty_dp">
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:drawableStart="@drawable/icon_email"
+                                                         android:gravity="center_vertical"
+                                                         android:padding="@dimen/ten_dp"
+                                                         android:fontFamily="@font/futura"
+                                                         android:textColor="@color/grey_600"
+                                                         android:drawablePadding="@dimen/ten_dp"
+                                                         android:textSize="@dimen/fifteen_sp"
+                                                         android:id="@+id/user_email"/>
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:drawableStart="@drawable/icon_location"
+                                                         android:gravity="center_vertical"
+                                                         android:padding="@dimen/ten_dp"
+                                                         android:fontFamily="@font/futura"
+                                                         android:textColor="@color/grey_600"
+                                                         android:drawablePadding="@dimen/ten_dp"
+                                                         android:textSize="@dimen/fifteen_sp"
+                                                         android:id="@+id/user_location"/>
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:drawableStart="@drawable/icon_school"
+                                                         android:gravity="center_vertical"
+                                                         android:padding="@dimen/ten_dp"
+                                                         android:fontFamily="@font/futura"
+                                                         android:textColor="@color/grey_600"
+                                                         android:drawablePadding="@dimen/ten_dp"
+                                                         android:textSize="@dimen/fifteen_sp"
+                                                         android:id="@+id/user_college"/>
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:drawableStart="@drawable/icon_school"
+                                                         android:gravity="center_vertical"
+                                                         android:padding="@dimen/ten_dp"
+                                                         android:fontFamily="@font/futura"
+                                                         android:textColor="@color/grey_600"
+                                                         android:drawablePadding="@dimen/ten_dp"
+                                                         android:textSize="@dimen/fifteen_sp"
+                                                         android:id="@+id/user_session"/>
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:drawableStart="@drawable/icon_school"
+                                                         android:gravity="center_vertical"
+                                                         android:padding="@dimen/ten_dp"
+                                                         android:fontFamily="@font/futura"
+                                                         android:textColor="@color/grey_600"
+                                                         android:drawablePadding="@dimen/ten_dp"
+                                                         android:textSize="@dimen/fifteen_sp"
+                                                         android:id="@+id/user_bio"/>
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

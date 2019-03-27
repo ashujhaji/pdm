@@ -25,7 +25,6 @@
                                                               app:srcCompat="@drawable/no_notification"/>
                 <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
                                                              android:layout_height="wrap_content"
-                                                             android:text="Ashutosh Jha"
                                                              android:fontFamily="@font/futura"
                                                              android:textStyle="bold"
                                                              android:textColor="@color/grey_800"
@@ -41,8 +40,7 @@
                                                              android:textColor="@color/grey_600"
                                                              android:paddingStart="@dimen/twenty_one_dp"
                                                              android:id="@+id/user_detail"
-                                                             android:paddingEnd="@dimen/twenty_one_dp"
-                                                             android:text="Alumni|HMR Institute of technology and management"/>
+                                                             android:paddingEnd="@dimen/twenty_one_dp"/>
             </LinearLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
         <android.support.design.widget.TabLayout android:layout_width="match_parent"
