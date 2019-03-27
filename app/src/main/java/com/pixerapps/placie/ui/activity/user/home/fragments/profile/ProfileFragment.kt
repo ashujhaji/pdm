@@ -12,7 +12,7 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View,ProfilePresenter>()
     override var presenter: ProfilePresenter= ProfilePresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        setHasOptionsMenu(true)
+//        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_user_profile,container,false)
     }
 
@@ -22,22 +22,22 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View,ProfilePresenter>()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.profile_menu,menu)
+//        inflater!!.inflate(R.menu.profile_menu,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item!!.itemId){
-            R.id.nav_logout->{
-
-            }
-        }
+//        when(item!!.itemId){
+//            R.id.nav_logout->{
+//
+//            }
+//        }
         return false
     }
 
     override fun showToolbar() {
-        (activity as HomeActivity).setSupportActionBar(toolbar as Toolbar)
-        (toolbar as Toolbar).title = "Profile"
+//        (activity as HomeActivity).setSupportActionBar(toolbar as Toolbar)
+//        (toolbar as Toolbar).title = "Profile"
 
     }
 }
