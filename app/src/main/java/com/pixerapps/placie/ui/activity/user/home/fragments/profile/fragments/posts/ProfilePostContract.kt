@@ -1,12 +1,10 @@
-package com.pixerapps.placie.ui.activity.user.home.fragments.profile
+package com.pixerapps.placie.ui.activity.user.home.fragments.profile.fragments.posts
 
 import com.pixerapps.placie.mvp.BaseMvpPresenter
 import com.pixerapps.placie.mvp.BaseMvpView
 
-object ProfileContract {
+object ProfilePostContract {
     interface View : BaseMvpView {
-        fun showToolbar()
-        fun showViepager()
     }
 
     interface Presenter : BaseMvpPresenter<View> {
