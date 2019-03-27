@@ -5,7 +5,7 @@ import com.pixerapps.placie.mvp.BaseMvpView
 
 object ProfileContract {
     interface View : BaseMvpView {
-
+        fun showToolbar()
     }
 
     interface Presenter : BaseMvpPresenter<View> {
