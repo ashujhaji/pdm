@@ -10,6 +10,6 @@ object EditProfileActivityContract {
     }
 
     interface Presenter : BaseMvpPresenter<View> {
-
+        fun updateUserProfile(name:String,email:String,location:String,instId:String,course:String,startYear:String,endYear:String,bio:String)
     }
 }

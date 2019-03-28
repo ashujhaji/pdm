@@ -25,4 +25,20 @@ public interface ApiInterface {
             @Field("user_gid") String user_gid,
             @Field("token") String token
     );
+
+    @FormUrlEncoded
+    @POST("api/update_user_details")
+    Call<UserPojo> updateUserDetails(
+            @Field("user_gid") String user_gid,
+            @Field("token") String token,
+            @Field("user_name") String userName,
+            @Field("user_bio") String userBio,
+            @Field("user_email") String userEmail,
+            @Field("college_name") String collegeName,
+            @Field("institute_id") String instituteId,
+            @Field("course") String course,
+            @Field("session") String session,
+            @Field("user_type") String user_type,
+            @Field("location") String location
+    );
 }

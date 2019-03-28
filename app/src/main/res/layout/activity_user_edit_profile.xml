@@ -133,5 +133,6 @@
                                                         android:layout_height="wrap_content"
                                                         android:layout_gravity="bottom|end"
                                                         android:layout_margin="@dimen/ten_dp"
-                                                        android:src="@drawable/icon_done"/>
+                                                        android:src="@drawable/icon_done"
+                                                        android:id="@+id/update_profile"/>
 </android.support.design.widget.CoordinatorLayout>

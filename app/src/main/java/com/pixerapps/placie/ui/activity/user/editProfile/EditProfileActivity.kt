@@ -11,7 +11,7 @@ import com.pixerapps.placie.mvp.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_user_edit_profile.*
 
 class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, EditProfileActivityPresenter>(),
-    EditProfileActivityContract.View {
+    EditProfileActivityContract.View, View.OnClickListener {
 
     override var presenter: EditProfileActivityPresenter = EditProfileActivityPresenter()
 
@@ -60,7 +60,7 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
             edit_user_inst_id.setText(CurrentUserData.getInstance().userData[0].instituteId)
         }
         if (CurrentUserData.getInstance().userData[0].course.isNotEmpty()) {
-            edit_user_inst_id.setText(CurrentUserData.getInstance().userData[0].course)
+            edit_user_course.setText(CurrentUserData.getInstance().userData[0].course)
         }
         if (CurrentUserData.getInstance().userData[0].session.isNotEmpty()) {
             edit_course_start.text = CurrentUserData.getInstance().userData[0].session.substring(0, 3)
@@ -70,6 +70,23 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
             edit_user_bio.setText(CurrentUserData.getInstance().userData[0].user_bio)
         }
 
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.update_profile -> {
+                presenter.updateUserProfile(
+                    edit_user_name.text.toString(),
+                    edit_user_email.text.toString(),
+                    edit_user_location.text.toString(),
+                    edit_user_inst_id.text.toString(),
+                    edit_user_course.text.toString(),
+                    edit_course_start.text.toString(),
+                    edit_course_end.text.toString(),
+                    edit_user_bio.text.toString()
+                    )
+            }
+        }
     }
 
 }
