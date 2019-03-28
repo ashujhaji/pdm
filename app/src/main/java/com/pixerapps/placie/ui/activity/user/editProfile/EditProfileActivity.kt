@@ -6,8 +6,8 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import com.pixerapps.placie.R
-import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.mvp.BaseMvpActivity
+import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.activity_user_edit_profile.*
 
 class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, EditProfileActivityPresenter>(),
@@ -46,30 +46,30 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
 
 
     override fun updateFieldsWithExistingData() {
-        if (CurrentUserData.getInstance().userData[0].user_name!=null) {
-            edit_user_name.setText(CurrentUserData.getInstance().userData[0].user_name)
+        if (Constants.USER_DETAILS.user_name!=null) {
+            edit_user_name.setText(Constants.USER_DETAILS.user_name)
         }
-        if (CurrentUserData.getInstance().userData[0].user_email!=null) {
-            edit_user_email.setText(CurrentUserData.getInstance().userData[0].user_email)
+        if (Constants.USER_DETAILS.user_email!=null) {
+            edit_user_email.setText(Constants.USER_DETAILS.user_email)
         }
-        if (CurrentUserData.getInstance().userData[0].location!=null) {
-            edit_user_location.setText(CurrentUserData.getInstance().userData[0].location)
+        if (Constants.USER_DETAILS.location!=null) {
+            edit_user_location.setText(Constants.USER_DETAILS.location)
         }
-        if (CurrentUserData.getInstance().userData[0].location!=null) {
-            edit_user_location.setText(CurrentUserData.getInstance().userData[0].location)
+        if (Constants.USER_DETAILS.location!=null) {
+            edit_user_location.setText(Constants.USER_DETAILS.location)
         }
-        if (CurrentUserData.getInstance().userData[0].instituteId!=null) {
-            edit_user_inst_id.setText(CurrentUserData.getInstance().userData[0].instituteId)
+        if (Constants.USER_DETAILS.instituteId!=null) {
+            edit_user_inst_id.setText(Constants.USER_DETAILS.instituteId)
         }
-        if (CurrentUserData.getInstance().userData[0].course!=null) {
-            edit_user_course.setText(CurrentUserData.getInstance().userData[0].course)
+        if (Constants.USER_DETAILS.course!=null) {
+            edit_user_course.setText(Constants.USER_DETAILS.course)
         }
-        if (CurrentUserData.getInstance().userData[0].session!=null) {
-            edit_course_start.text = CurrentUserData.getInstance().userData[0].session.substring(0, 4)
-            edit_course_end.text = CurrentUserData.getInstance().userData[0].session.substring(5)
+        if (Constants.USER_DETAILS.session!=null) {
+            edit_course_start.text = Constants.USER_DETAILS.session.substring(0, 4)
+            edit_course_end.text = Constants.USER_DETAILS.session.substring(5)
         }
-        if (CurrentUserData.getInstance().userData[0].user_bio!=null) {
-            edit_user_bio.setText(CurrentUserData.getInstance().userData[0].user_bio)
+        if (Constants.USER_DETAILS.user_bio!=null) {
+            edit_user_bio.setText(Constants.USER_DETAILS.user_bio)
         }
 
     }

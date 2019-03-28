@@ -2,6 +2,7 @@ package com.pixerapps.placie.ui.activity.splash
 
 import android.app.Activity
 import android.content.Intent
+import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.mvp.BaseMvpPresenterImpl
 import com.pixerapps.placie.ui.activity.authentication.AuthActivity
 import com.pixerapps.placie.ui.activity.user.home.HomeActivity
@@ -13,5 +14,12 @@ class SplashPresenter : BaseMvpPresenterImpl<SplashContract.View>(),SplashContra
         if (MyPref.getBoolean(Constants.IS_USER_LOGGED_IN,false)){
             activity.startActivity(Intent(activity,HomeActivity::class.java))
         }else activity.startActivity(Intent(activity,AuthActivity::class.java))
+    }
+
+    override fun loadUserData(activity: Activity) {
+        CurrentUserData.getInstance().getUserDetails {
+            Constants.USER_DETAILS=it.data[0]
+            moveToNextActivity(activity)
+        }
     }
 }

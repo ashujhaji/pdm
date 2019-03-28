@@ -7,6 +7,7 @@ import com.pixerapps.placie.R
 import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.mvp.BaseMvpFragment
 import com.pixerapps.placie.ui.activity.user.home.HomeActivity
+import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.fragment_user_profile.*
 
 class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(), ProfileContract.View {
@@ -22,7 +23,6 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
         super.onViewCreated(view, savedInstanceState)
 
         showToolbar()
-        showUserDetails()
         showViepager()
     }
 
@@ -47,19 +47,27 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
     }
 
     override fun showUserDetails() {
-        if (CurrentUserData.getInstance().userData.size!=0){
-            user_name.text = CurrentUserData.getInstance().userData[0].user_name
-            if (CurrentUserData.getInstance().userData[0].user_type != null && CurrentUserData.getInstance().userData[0].college_name != null && CurrentUserData.getInstance().userData[0].location != null) {
-                user_detail.text = CurrentUserData.getInstance().userData[0].user_type + "|" +
-                        CurrentUserData.getInstance().userData[0].college_name + "|" +
-                        CurrentUserData.getInstance().userData[0].location
+            user_name.text = Constants.USER_DETAILS.user_name
+            if (Constants.USER_DETAILS.user_type!=null && Constants.USER_DETAILS.college_name!=null && Constants.USER_DETAILS.location!=null) {
+                user_detail.text = Constants.USER_DETAILS.user_type + "|" +
+                        Constants.USER_DETAILS.college_name + "|" +
+                        Constants.USER_DETAILS.location
             }
-        }
     }
 
     override fun showViepager() {
         var pagerAdapter = ProfilePagerAdapter(activity!!.supportFragmentManager)
         viewPager.adapter = pagerAdapter
         tabLayout.setupWithViewPager(viewPager)
+    }
+
+    override fun getUserVisibleHint(): Boolean {
+        showUserDetails()
+        return true
+    }
+
+    override fun onResume() {
+        showUserDetails()
+        super.onResume()
     }
 }

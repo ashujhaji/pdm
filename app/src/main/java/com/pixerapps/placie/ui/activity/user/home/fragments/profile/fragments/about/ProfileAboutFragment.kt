@@ -10,6 +10,7 @@ import com.pixerapps.placie.R
 import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.mvp.BaseMvpFragment
 import com.pixerapps.placie.ui.activity.user.editProfile.EditProfileActivity
+import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.fragment_profile_about.*
 
 class ProfileAboutFragment : BaseMvpFragment<ProfileAboutContract.View, ProfileAboutPresenter>(),
@@ -31,44 +32,44 @@ class ProfileAboutFragment : BaseMvpFragment<ProfileAboutContract.View, ProfileA
     }
 
     override fun showUserData() {
-        if (CurrentUserData.getInstance().userData[0].user_email != null) {
-            user_email.text = CurrentUserData.getInstance().userData[0].user_email
+        if (Constants.USER_DETAILS.user_email!=null) {
+            user_email.text = Constants.USER_DETAILS.user_email
         } else {
             user_email.text = "Please update your email"
         }
 
-        if (CurrentUserData.getInstance().userData[0].location != null) {
-            user_location.text = CurrentUserData.getInstance().userData[0].location
+        if (Constants.USER_DETAILS.location!=null) {
+            user_location.text = Constants.USER_DETAILS.location
         } else {
             user_location.text = "Please update your location"
         }
 
-        if (CurrentUserData.getInstance().userData[0].user_email!=null) {
-            user_email.text = CurrentUserData.getInstance().userData[0].user_email
+        if (Constants.USER_DETAILS.user_email!=null) {
+            user_email.text = Constants.USER_DETAILS.user_email
         } else {
             user_email.text = "Please update your email"
         }
 
-        if (CurrentUserData.getInstance().userData[0].college_name!=null) {
-            user_college.text = CurrentUserData.getInstance().userData[0].college_name
+        if (Constants.USER_DETAILS.college_name!=null) {
+            user_college.text = Constants.USER_DETAILS.college_name
         } else {
             user_college.text = "Please update your institution"
         }
 
-        if (CurrentUserData.getInstance().userData[0].session!=null) {
-            user_session.text = CurrentUserData.getInstance().userData[0].session
+        if (Constants.USER_DETAILS.session!=null) {
+            user_session.text = Constants.USER_DETAILS.session
         } else {
             user_session.text = "Please update your session"
         }
 
-        if (CurrentUserData.getInstance().userData[0].user_email!=null) {
-            user_email.text = CurrentUserData.getInstance().userData[0].user_email
+        if (Constants.USER_DETAILS.user_email!=null) {
+            user_email.text = Constants.USER_DETAILS.user_email
         } else {
             user_email.text = "Please update your email"
         }
 
-        if (CurrentUserData.getInstance().userData[0].user_bio!=null) {
-            user_bio.text = CurrentUserData.getInstance().userData[0].user_bio
+        if (Constants.USER_DETAILS.user_bio!=null) {
+            user_bio.text = Constants.USER_DETAILS.user_bio
         } else {
             user_bio.text = "Please update your bio"
         }

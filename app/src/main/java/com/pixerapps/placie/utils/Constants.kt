@@ -1,5 +1,7 @@
 package com.pixerapps.placie.utils
 
+import com.pixerapps.placie.model.UserData
+
 object Constants {
     const val API_BASE_URL = "http://192.168.43.23:3000/"
 
@@ -10,4 +12,5 @@ object Constants {
 
     const val USER_GID = "userGid"
     const val USER_TOKEN = "userToken"
+    lateinit var USER_DETAILS : UserData
 }

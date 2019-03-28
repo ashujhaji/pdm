@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import com.google.firebase.auth.FirebaseAuth;
+import com.pixerapps.placie.callback.OnUserDataLoadedListener;
 import com.pixerapps.placie.data.remote.api.ApiClient;
 import com.pixerapps.placie.data.remote.api.ApiInterface;
 import com.pixerapps.placie.model.UserData;
@@ -42,7 +43,7 @@ public class CurrentUserData {
         return mAuth.getCurrentUser().getPhotoUrl();
     }
 
-    public void getUserDetails(){
+    public void getUserDetails(OnUserDataLoadedListener callback){
         if (ApiClient.getClient()!=null){
             Call<UserPojo> call = ApiClient.getClient().create(ApiInterface.class)
                     .getUserDetails(MyPref.getString(Constants.USER_GID,""),
@@ -51,7 +52,7 @@ public class CurrentUserData {
                 @Override
                 public void onResponse(@NonNull Call<UserPojo> call, @NonNull Response<UserPojo> response) {
                     if (response.isSuccessful()&&response.body().getSuccess())  {
-                        userData.addAll(response.body().getData());
+                        callback.onUserDataLoaded(response.body());
                         Log.d("authstatus",response.body().getData().toString());
                     }else Log.d("authstatus",response.message());
                 }

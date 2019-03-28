@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.ProgressDialog
 import android.util.Log
 import android.widget.Toast
+import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.data.remote.api.ApiClient
 import com.pixerapps.placie.data.remote.api.ApiInterface
 import com.pixerapps.placie.model.UserPojo
@@ -41,9 +42,12 @@ class EditProfileActivityPresenter : BaseMvpPresenterImpl<EditProfileActivityCon
             call.enqueue(object : Callback<UserPojo> {
                 override fun onResponse(call: Call<UserPojo>, response: Response<UserPojo>) {
                     if (response.isSuccessful && response.body()!!.success) {
-                        progressDialog.dismiss()
-                        Toast.makeText(activity, "Updated successfully", Toast.LENGTH_LONG).show()
-                        activity.finish()
+                        CurrentUserData.getInstance().getUserDetails {
+                            Constants.USER_DETAILS = it.data[0]
+                            progressDialog.dismiss()
+                            Toast.makeText(activity, "Updated successfully", Toast.LENGTH_LONG).show()
+                            activity.finish()
+                        }
                     } else
                         Log.d("authstatus", response.message())
                 }
