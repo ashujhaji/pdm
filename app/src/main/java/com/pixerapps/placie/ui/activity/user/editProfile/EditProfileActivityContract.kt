@@ -5,6 +5,8 @@ import com.pixerapps.placie.mvp.BaseMvpView
 
 object EditProfileActivityContract {
     interface View : BaseMvpView {
+        fun showToolbar()
+        fun updateFieldsWithExistingData()
     }
 
     interface Presenter : BaseMvpPresenter<View> {

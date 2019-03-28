@@ -22,5 +22,7 @@ data class UserData(
     @SerializedName("session") val  session :String,
     @SerializedName("user_type") val  user_type :String,
     @SerializedName("user_bio") val user_bio : String,
-    @SerializedName("location") val location : String
+    @SerializedName("location") val location : String,
+    @SerializedName("institute_id") val instituteId:String,
+    @SerializedName("course") val course:String
 )

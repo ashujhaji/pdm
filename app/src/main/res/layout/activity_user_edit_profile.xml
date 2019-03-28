@@ -6,7 +6,7 @@
                                                  android:background="@color/white">
     <include
             layout="@layout/toolbar"
-            android:id="@+id/toolbar"/>
+            android:id="@+id/edit_toolbar"/>
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/toolbar_height">
@@ -20,6 +20,7 @@
                                                           android:layout_marginTop="@dimen/twenty_one_dp"/>
             <android.support.v7.widget.AppCompatEditText android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
+                                                         android:id="@+id/edit_user_name"
                                                          android:background="@drawable/edit_text_bg_2"
                                                          android:drawableStart="@drawable/icon_user"
                                                          android:padding="@dimen/ten_dp"
@@ -32,6 +33,7 @@
                                                          android:layout_margin="@dimen/ten_dp"/>
             <android.support.v7.widget.AppCompatEditText android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
+                                                         android:id="@+id/edit_user_email"
                                                          android:background="@drawable/edit_text_bg_2"
                                                          android:drawableStart="@drawable/icon_email"
                                                          android:padding="@dimen/ten_dp"
@@ -44,6 +46,7 @@
                                                          android:layout_margin="@dimen/ten_dp"/>
             <android.support.v7.widget.AppCompatEditText android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
+                                                         android:id="@+id/edit_user_location"
                                                          android:background="@drawable/edit_text_bg_2"
                                                          android:drawableStart="@drawable/icon_location"
                                                          android:padding="@dimen/ten_dp"
@@ -56,6 +59,7 @@
                                                          android:layout_margin="@dimen/ten_dp"/>
             <android.support.v7.widget.AppCompatEditText android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
+                                                         android:id="@+id/edit_user_inst_id"
                                                          android:background="@drawable/edit_text_bg_2"
                                                          android:drawableStart="@drawable/icon_school"
                                                          android:padding="@dimen/ten_dp"
@@ -75,6 +79,7 @@
                                                          android:fontFamily="@font/futura"
                                                          android:drawablePadding="@dimen/ten_dp"
                                                          android:textSize="@dimen/eighteen_sp"
+                                                         android:id="@+id/edit_user_course"
                                                          android:textColorHint="@color/grey_400"
                                                          android:textColor="@color/grey_800"
                                                          android:layout_margin="@dimen/ten_dp"/>
@@ -94,6 +99,7 @@
                                                              android:fontFamily="@font/futura"
                                                              android:textColor="@color/grey_400"
                                                              android:textSize="@dimen/eighteen_sp"
+                                                             android:id="@+id/edit_course_start"
                                                              android:layout_marginStart="@dimen/ten_dp"/>
                 <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
                                                              android:layout_height="@dimen/forty_dp"
@@ -104,6 +110,7 @@
                                                              android:fontFamily="@font/futura"
                                                              android:textColor="@color/grey_400"
                                                              android:textSize="@dimen/eighteen_sp"
+                                                             android:id="@+id/edit_course_end"
                                                              android:layout_marginStart="@dimen/ten_dp"/>
             </LinearLayout>
             <android.support.v7.widget.AppCompatEditText android:layout_width="match_parent"
@@ -117,7 +124,8 @@
                                                          android:textSize="@dimen/eighteen_sp"
                                                          android:textColorHint="@color/grey_400"
                                                          android:textColor="@color/grey_800"
-                                                         android:layout_margin="@dimen/ten_dp"/>
+                                                         android:layout_margin="@dimen/ten_dp"
+                                                         android:id="@+id/edit_user_bio"/>
             <View android:layout_width="match_parent" android:layout_height="@dimen/toolbar_height"/>
         </LinearLayout>
     </ScrollView>

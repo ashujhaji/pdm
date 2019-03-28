@@ -27,4 +27,9 @@
         <item name="android:fontFamily">@font/futura</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="futuraTextAppearance">
+        <item name="android:fontFamily">@font/futura</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
