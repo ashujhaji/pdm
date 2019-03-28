@@ -15,7 +15,9 @@
     <string name="notification">Notification</string>
     <string name="logout">Logout</string>
     <string name="no_notification">You don\'t have any notification</string>
+    <string name="no_post">No post yet</string>
     <string name="no_notification_msg">We will make you up-to-date with all relevant opportunities</string>
+    <string name="no_post_msg">Post your thoughts and help out the community</string>
     <string name="enter_name">Enter your name</string>
     <string name="enter_email">Enter your email</string>
     <string name="enter_location">Enter your location</string>
