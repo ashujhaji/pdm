@@ -16,4 +16,10 @@
     <string name="logout">Logout</string>
     <string name="no_notification">You don\'t have any notification</string>
     <string name="no_notification_msg">We will make you up-to-date with all relevant opportunities</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="enter_email">Enter your email</string>
+    <string name="enter_location">Enter your location</string>
+    <string name="enter_institute">Enter your institute id</string>
+    <string name="enter_course">Enter your course</string>
+    <string name="enter_bio">Update your bio</string>
 </resources>
