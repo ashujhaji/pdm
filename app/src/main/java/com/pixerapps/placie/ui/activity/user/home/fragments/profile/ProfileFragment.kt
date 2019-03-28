@@ -1,8 +1,10 @@
 package com.pixerapps.placie.ui.activity.user.home.fragments.profile
 
+import android.app.Dialog
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.view.*
+import android.widget.TextView
 import com.pixerapps.placie.R
 import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.mvp.BaseMvpFragment
@@ -34,7 +36,7 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item!!.itemId) {
             R.id.nav_logout -> {
-
+                showLogoutDialog()
             }
         }
         return false
@@ -61,13 +63,28 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
         tabLayout.setupWithViewPager(viewPager)
     }
 
-    override fun getUserVisibleHint(): Boolean {
-        showUserDetails()
-        return true
-    }
-
     override fun onResume() {
         showUserDetails()
         super.onResume()
+    }
+
+    override fun showLogoutDialog() {
+        val logout : TextView
+        val cancel : TextView
+        val dialog = Dialog(context!!)
+        dialog.setContentView(R.layout.dialog_user_logout)
+        dialog.show()
+
+        logout = dialog.findViewById(R.id.logout)
+        cancel = dialog.findViewById(R.id.cancel)
+
+        logout.setOnClickListener {
+            CurrentUserData.getInstance().logout(activity)
+        }
+
+        cancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
     }
 }

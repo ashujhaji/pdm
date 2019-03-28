@@ -24,8 +24,6 @@ class ProfileAboutFragment : BaseMvpFragment<ProfileAboutContract.View, ProfileA
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showUserData()
-
         user_email.setOnClickListener {
             startActivity(Intent(activity, EditProfileActivity::class.java))
         }
@@ -73,6 +71,11 @@ class ProfileAboutFragment : BaseMvpFragment<ProfileAboutContract.View, ProfileA
         } else {
             user_bio.text = "Please update your bio"
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showUserData()
     }
 
 }

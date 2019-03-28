@@ -8,6 +8,7 @@ object ProfileContract {
         fun showToolbar()
         fun showUserDetails()
         fun showViepager()
+        fun showLogoutDialog()
     }
 
     interface Presenter : BaseMvpPresenter<View> {

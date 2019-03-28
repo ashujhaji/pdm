@@ -22,4 +22,5 @@
     <string name="enter_institute">Enter your institute id</string>
     <string name="enter_course">Enter your course</string>
     <string name="enter_bio">Update your bio</string>
+    <string name="logout_msg">Are you sure you want to logout?</string>
 </resources>

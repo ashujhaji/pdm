@@ -1,5 +1,7 @@
 package com.pixerapps.placie.authentication;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -9,6 +11,7 @@ import com.pixerapps.placie.data.remote.api.ApiClient;
 import com.pixerapps.placie.data.remote.api.ApiInterface;
 import com.pixerapps.placie.model.UserData;
 import com.pixerapps.placie.model.UserPojo;
+import com.pixerapps.placie.ui.activity.authentication.AuthActivity;
 import com.pixerapps.placie.utils.Constants;
 import com.pixerapps.placie.utils.MyPref;
 import retrofit2.Call;
@@ -29,18 +32,6 @@ public class CurrentUserData {
             instance = new CurrentUserData();
         }
         return instance;
-    }
-
-    public String uid(){
-        return mAuth.getCurrentUser().getUid();
-    }
-
-    public String displayName(){
-        return mAuth.getCurrentUser().getDisplayName();
-    }
-
-    public Uri imageUrl(){
-        return mAuth.getCurrentUser().getPhotoUrl();
     }
 
     public void getUserDetails(OnUserDataLoadedListener callback){
@@ -66,4 +57,8 @@ public class CurrentUserData {
     }
 
 
+    public void logout(Activity activity){
+        mAuth.signOut();
+        activity.startActivity(new Intent(activity,AuthActivity.class));
+    }
 }

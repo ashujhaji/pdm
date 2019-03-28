@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:gravity="center">
+        <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
+                                                     android:layout_height="wrap_content"
+                                                     android:text="@string/logout_msg"
+                                                     android:fontFamily="@font/futura"
+                                                     android:textSize="@dimen/eighteen_sp"
+                                                     android:textColor="@color/grey_800"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:padding="@dimen/ten_dp"
+                      android:layout_margin="@dimen/twenty_one_dp">
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:layout_weight="1"
+                                                         android:text="Cancel"
+                                                         android:textColor="@color/colorPrimaryDark"
+                                                         android:textSize="@dimen/eighteen_sp"
+                                                         android:fontFamily="@font/futura"
+                                                         android:padding="@dimen/ten_dp"
+                                                         android:gravity="center"
+                                                         android:background="@drawable/bg_round_light"
+                                                         android:layout_marginEnd="@dimen/ten_dp"
+                                                         android:id="@+id/cancel"/>
+            <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:layout_weight="1"
+                                                         android:text="@string/logout"
+                                                         android:textColor="@color/white"
+                                                         android:textSize="@dimen/eighteen_sp"
+                                                         android:fontFamily="@font/futura"
+                                                         android:gravity="center"
+                                                         android:padding="@dimen/ten_dp"
+                                                         android:background="@drawable/bg_round_corner"
+                                                         android:id="@+id/logout"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
