@@ -34,7 +34,6 @@ public interface ApiInterface {
             @Field("user_name") String userName,
             @Field("user_bio") String userBio,
             @Field("user_email") String userEmail,
-            @Field("college_name") String collegeName,
             @Field("institute_id") String instituteId,
             @Field("course") String course,
             @Field("session") String session,

@@ -21,7 +21,7 @@ class EditProfileActivityPresenter : BaseMvpPresenterImpl<EditProfileActivityCon
             val call = ApiClient.getClient().create(ApiInterface::class.java)
                 .updateUserDetails(MyPref.getString(Constants.USER_GID,""),
                     MyPref.getString(Constants.USER_TOKEN,""),
-                    name,bio,email,"",instId,course, "$startYear-$endYear",getUserType(endYear),location)
+                    name,bio,email,instId,course, "$startYear-$endYear",getUserType(endYear),location)
             call.enqueue(object : Callback<UserPojo> {
                 override fun onResponse(call: Call<UserPojo>, response: Response<UserPojo>) {
                     if (response.isSuccessful && response.body()!!.success) {
