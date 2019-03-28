@@ -65,8 +65,8 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
             edit_user_course.setText(CurrentUserData.getInstance().userData[0].course)
         }
         if (CurrentUserData.getInstance().userData[0].session!=null) {
-            edit_course_start.text = CurrentUserData.getInstance().userData[0].session.substring(0, 3)
-            edit_course_end.text = CurrentUserData.getInstance().userData[0].session.substring(4)
+            edit_course_start.text = CurrentUserData.getInstance().userData[0].session.substring(0, 4)
+            edit_course_end.text = CurrentUserData.getInstance().userData[0].session.substring(5)
         }
         if (CurrentUserData.getInstance().userData[0].user_bio!=null) {
             edit_user_bio.setText(CurrentUserData.getInstance().userData[0].user_bio)
