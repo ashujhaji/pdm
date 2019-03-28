@@ -24,6 +24,8 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
         showToolbar()
         updateFieldsWithExistingData()
 
+        update_profile.setOnClickListener(this)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -44,29 +46,29 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
 
 
     override fun updateFieldsWithExistingData() {
-        if (CurrentUserData.getInstance().userData[0].user_name.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].user_name!=null) {
             edit_user_name.setText(CurrentUserData.getInstance().userData[0].user_name)
         }
-        if (CurrentUserData.getInstance().userData[0].user_email.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].user_email!=null) {
             edit_user_email.setText(CurrentUserData.getInstance().userData[0].user_email)
         }
-        if (CurrentUserData.getInstance().userData[0].location.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].location!=null) {
             edit_user_location.setText(CurrentUserData.getInstance().userData[0].location)
         }
-        if (CurrentUserData.getInstance().userData[0].location.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].location!=null) {
             edit_user_location.setText(CurrentUserData.getInstance().userData[0].location)
         }
-        if (CurrentUserData.getInstance().userData[0].instituteId.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].instituteId!=null) {
             edit_user_inst_id.setText(CurrentUserData.getInstance().userData[0].instituteId)
         }
-        if (CurrentUserData.getInstance().userData[0].course.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].course!=null) {
             edit_user_course.setText(CurrentUserData.getInstance().userData[0].course)
         }
-        if (CurrentUserData.getInstance().userData[0].session.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].session!=null) {
             edit_course_start.text = CurrentUserData.getInstance().userData[0].session.substring(0, 3)
             edit_course_end.text = CurrentUserData.getInstance().userData[0].session.substring(4)
         }
-        if (CurrentUserData.getInstance().userData[0].user_bio.isNotEmpty()) {
+        if (CurrentUserData.getInstance().userData[0].user_bio!=null) {
             edit_user_bio.setText(CurrentUserData.getInstance().userData[0].user_bio)
         }
 
@@ -75,7 +77,7 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.update_profile -> {
-                presenter.updateUserProfile(
+                presenter.updateUserProfile(this,
                     edit_user_name.text.toString(),
                     edit_user_email.text.toString(),
                     edit_user_location.text.toString(),

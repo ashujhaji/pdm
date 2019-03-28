@@ -1,6 +1,8 @@
 package com.pixerapps.placie.ui.activity.user.editProfile
 
+import android.app.Activity
 import android.util.Log
+import android.widget.Toast
 import com.pixerapps.placie.data.remote.api.ApiClient
 import com.pixerapps.placie.data.remote.api.ApiInterface
 import com.pixerapps.placie.model.UserPojo
@@ -15,8 +17,8 @@ import java.util.*
 class EditProfileActivityPresenter : BaseMvpPresenterImpl<EditProfileActivityContract.View>(),
     EditProfileActivityContract.Presenter {
 
-    override fun updateUserProfile(name:String,email:String,location:String,instId:String,course:String,startYear:String,
-                                   endYear:String,bio:String) {
+    override fun updateUserProfile(activity: Activity, name:String, email:String, location:String, instId:String, course:String, startYear:String,
+                                   endYear:String, bio:String) {
         if (ApiClient.getClient() != null) {
             val call = ApiClient.getClient().create(ApiInterface::class.java)
                 .updateUserDetails(MyPref.getString(Constants.USER_GID,""),
@@ -25,7 +27,8 @@ class EditProfileActivityPresenter : BaseMvpPresenterImpl<EditProfileActivityCon
             call.enqueue(object : Callback<UserPojo> {
                 override fun onResponse(call: Call<UserPojo>, response: Response<UserPojo>) {
                     if (response.isSuccessful && response.body()!!.success) {
-
+                        Toast.makeText(activity,"Updated successfully",Toast.LENGTH_LONG).show()
+                        activity.finish()
                     } else
                         Log.d("authstatus", response.message())
                 }
