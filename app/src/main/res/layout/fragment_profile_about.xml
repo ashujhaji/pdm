@@ -45,7 +45,7 @@
                                                          android:id="@+id/user_college"/>
             <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
-                                                         android:drawableStart="@drawable/icon_school"
+                                                         android:drawableStart="@drawable/ic_calender"
                                                          android:gravity="center_vertical"
                                                          android:padding="@dimen/ten_dp"
                                                          android:fontFamily="@font/futura"
@@ -55,7 +55,7 @@
                                                          android:id="@+id/user_session"/>
             <android.support.v7.widget.AppCompatTextView android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
-                                                         android:drawableStart="@drawable/icon_school"
+                                                         android:drawableStart="@drawable/icon_bio"
                                                          android:gravity="center_vertical"
                                                          android:padding="@dimen/ten_dp"
                                                          android:fontFamily="@font/futura"
