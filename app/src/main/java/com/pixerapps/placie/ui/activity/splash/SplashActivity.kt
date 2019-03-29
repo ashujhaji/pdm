@@ -15,6 +15,6 @@ class SplashActivity : BaseMvpActivity<SplashContract.View, SplashPresenter>(),S
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         window.statusBarColor = Color.WHITE
 
-        presenter.loadUserData(this)
+        presenter.moveToNextActivity(this)
     }
 }

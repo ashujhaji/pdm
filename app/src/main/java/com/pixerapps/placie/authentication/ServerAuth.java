@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import com.google.firebase.auth.FirebaseUser;
+import com.pixerapps.placie.callback.OnUserDataLoadedListener;
 import com.pixerapps.placie.model.UserPojo;
 import com.pixerapps.placie.data.remote.api.ApiClient;
 import com.pixerapps.placie.data.remote.api.ApiInterface;
@@ -37,7 +38,10 @@ public class ServerAuth {
                         progressDialog.dismiss();
                         MyPref.putBoolean(Constants.IS_USER_LOGGED_IN,true);
                         MyPref.putString(Constants.USER_TOKEN,response.body().getData().get(0).getToken());
-                        activity.startActivity(new Intent(activity,HomeActivity.class));
+                        CurrentUserData.getInstance().getUserDetails(userPojo -> {
+                            Constants.USER_DETAILS = userPojo.getData().get(0);
+                            activity.startActivity(new Intent(activity,HomeActivity.class));
+                        });
                         Log.d("authstatus",user.getDisplayName()+user.getEmail());
                     }else Log.d("authstatus",response.message());
                 }

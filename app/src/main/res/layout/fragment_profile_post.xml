@@ -6,7 +6,7 @@
     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:orientation="vertical"
                   android:gravity="center"
-                  android:layout_gravity="center"
+                  android:layout_gravity="center_horizontal"
                   android:padding="@dimen/fifteen_sp">
         <android.support.v7.widget.AppCompatImageView android:layout_width="@dimen/hundred_dp"
                                                       android:layout_height="@dimen/hundred_dp"

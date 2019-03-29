@@ -12,14 +12,14 @@ import com.pixerapps.placie.utils.MyPref
 class SplashPresenter : BaseMvpPresenterImpl<SplashContract.View>(),SplashContract.Presenter {
     override fun moveToNextActivity(activity: Activity) {
         if (MyPref.getBoolean(Constants.IS_USER_LOGGED_IN,false)){
-            activity.startActivity(Intent(activity,HomeActivity::class.java))
+            loadUserData(activity)
         }else activity.startActivity(Intent(activity,AuthActivity::class.java))
     }
 
     override fun loadUserData(activity: Activity) {
         CurrentUserData.getInstance().getUserDetails {
             Constants.USER_DETAILS=it.data[0]
-            moveToNextActivity(activity)
+            activity.startActivity(Intent(activity,HomeActivity::class.java))
         }
     }
 }
