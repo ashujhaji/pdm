@@ -34,7 +34,7 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) : Re
         var posted_at: TextView = itemView.findViewById(R.id.posted_at)
         var post_title: TextView = itemView.findViewById(R.id.post_title)
         var post_body: TextView = itemView.findViewById(R.id.post_body)
-        var post_image: TextView = itemView.findViewById(R.id.post_image)
+        var post_image: ImageView = itemView.findViewById(R.id.post_image)
         var comment_count: TextView = itemView.findViewById(R.id.comment_count)
         var apply_btn: TextView = itemView.findViewById(R.id.apply_btn)
         var comment_box: TextView = itemView.findViewById(R.id.comment_box)
@@ -44,7 +44,7 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) : Re
 
             user_name.text = data.contributorName
             institution.text = data.contributorInstitute
-            posted_at.text = data.createdAt
+            posted_at.text = data.createdAt.subSequence(0,10)
             post_title.text = data.postTitle
             post_body.text = data.postBody
             comment_count.text = data.comments.size.toString() + " comments"
