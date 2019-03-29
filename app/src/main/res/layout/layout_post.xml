@@ -10,7 +10,6 @@
                       android:orientation="horizontal">
             <android.support.v7.widget.AppCompatImageView android:layout_width="@dimen/main_toolbar_height"
                                                           android:layout_height="@dimen/main_toolbar_height"
-                                                          app:srcCompat="@tools:sample/avatars"
                                                           android:layout_gravity="center"
                                                           android:id="@+id/user_dp"/>
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"

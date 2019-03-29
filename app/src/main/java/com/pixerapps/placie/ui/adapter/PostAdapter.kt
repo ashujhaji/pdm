@@ -1,6 +1,6 @@
 package com.pixerapps.placie.ui.adapter
 
-import android.app.Activity
+import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.pixerapps.placie.R
 import com.pixerapps.placie.model.PostData
 
-class PostAdapter(var list: List<PostData>, var activity: Activity) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): PostAdapter.ViewHolder {
         return ViewHolder(LayoutInflater.from(p0.context).inflate(R.layout.layout_post, p0, false))
     }

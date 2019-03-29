@@ -1,6 +1,7 @@
 package com.pixerapps.placie.data.remote.api;
 
 
+import com.pixerapps.placie.model.PostPojo;
 import com.pixerapps.placie.model.UserPojo;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -39,5 +40,12 @@ public interface ApiInterface {
             @Field("session") String session,
             @Field("user_type") String user_type,
             @Field("location") String location
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/get_all_posts")
+    Call<PostPojo> getAllPosts(
+        @Field("token") String token
     );
 }
