@@ -59,6 +59,8 @@ public class CurrentUserData {
 
     public void logout(Activity activity){
         mAuth.signOut();
+        MyPref.putString(Constants.USER_GID,"");
+        MyPref.putBoolean(Constants.IS_USER_LOGGED_IN,false);
         activity.startActivity(new Intent(activity,AuthActivity.class));
     }
 }
