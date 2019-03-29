@@ -23,6 +23,7 @@
     <!--category card-->
     <dimen name="icon_dimen">100dp</dimen>
 
+    <dimen name="twelve_sp">12sp</dimen>
     <dimen name="five_dp">5dp</dimen>
     <dimen name="eight_dp">8dp</dimen>
     <dimen name="ten_dp">10dp</dimen>
