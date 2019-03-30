@@ -13,12 +13,12 @@ import com.pixerapps.placie.ui.adapter.CommentAdapter
 import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.activity_full_post.*
 
-class PostFullActivity(var post: PostData) : BaseMvpActivity<PostFullContract.View, PostFullPresenter>(),
+class PostFullActivity(postData: PostData) : BaseMvpActivity<PostFullContract.View, PostFullPresenter>(),
     PostFullContract.View, View.OnClickListener {
-
 
     override var presenter: PostFullPresenter = PostFullPresenter()
     var adapter: CommentAdapter? = null
+    var post: PostData = postData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
