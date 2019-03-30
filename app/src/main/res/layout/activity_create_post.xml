@@ -23,7 +23,8 @@
                     android:paddingRight="17dp"
                     android:textColorHint="@color/grey_400"
                     android:textSize="@dimen/eighteen_sp"
-                    android:minHeight="@dimen/eighty_dp"/>
+                    android:minHeight="@dimen/eighty_dp"
+                    android:id="@+id/post_title"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -36,7 +37,8 @@
                     android:textColorHint="@color/grey_400"
                     android:textSize="@dimen/eighteen_sp"
                     android:layout_marginTop="@dimen/ten_dp"
-                    android:minHeight="@dimen/two_hundred_dp"/>
+                    android:minHeight="@dimen/two_hundred_dp"
+                    android:id="@+id/post_body"/>
             <android.support.v7.widget.AppCompatImageView android:layout_width="match_parent"
                                                           android:layout_height="wrap_content"
                                                           android:layout_marginTop="@dimen/ten_dp"
@@ -48,5 +50,6 @@
                                                         android:layout_height="wrap_content"
                                                         android:layout_gravity="end|bottom"
                                                         android:layout_margin="@dimen/ten_dp"
+                                                        android:id="@+id/create_post"
                                                         android:src="@drawable/icon_done"/>
 </android.support.design.widget.CoordinatorLayout>

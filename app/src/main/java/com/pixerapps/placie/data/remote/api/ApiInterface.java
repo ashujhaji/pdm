@@ -47,7 +47,7 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("api/get_all_posts")
     Call<PostPojo> getAllPosts(
-        @Field("token") String token
+            @Field("token") String token
     );
 
 
@@ -59,5 +59,17 @@ public interface ApiInterface {
             @Field("user_name") String userName,
             @Field("user_email") String userEmail,
             @Field("post_id") String postId
+    );
+
+    @FormUrlEncoded
+    @POST("api/create_post")
+    Call<PostPojo> createPost(
+            @Field("token") String token,
+            @Field("post_body") String postBody,
+            @Field("post_title") String postTitle,
+            @Field("image") String image,
+            @Field("contributor_id") String contributorId,
+            @Field("contributor_name") String contributorName,
+            @Field("contributor_institute") String contributor_institute
     );
 }

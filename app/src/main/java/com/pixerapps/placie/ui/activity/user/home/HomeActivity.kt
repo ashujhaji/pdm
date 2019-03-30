@@ -1,5 +1,6 @@
 package com.pixerapps.placie.ui.activity.user.home
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -7,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import com.pixerapps.placie.R
 import com.pixerapps.placie.mvp.BaseMvpActivity
+import com.pixerapps.placie.ui.activity.createPost.CreatePostActivity
 import com.pixerapps.placie.ui.activity.user.home.fragments.feed.FeedFragment
 import com.pixerapps.placie.ui.activity.user.home.fragments.notification.NotificationFragment
 import com.pixerapps.placie.ui.activity.user.home.fragments.profile.ProfileFragment
@@ -14,7 +16,7 @@ import com.pixerapps.placie.utils.Config
 import kotlinx.android.synthetic.main.activity_user_home.*
 
 class HomeActivity : BaseMvpActivity<HomeActivityContract.View, HomeActivityPresenter>(), HomeActivityContract.View,
-    BottomNavigationView.OnNavigationItemSelectedListener {
+    BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     override var presenter: HomeActivityPresenter = HomeActivityPresenter()
 
@@ -28,27 +30,36 @@ class HomeActivity : BaseMvpActivity<HomeActivityContract.View, HomeActivityPres
         presenter.loadUserData()
 
         bottom_navigation.setOnNavigationItemSelectedListener(this)
+        add_post.setOnClickListener(this)
     }
 
     override fun showDefaultFragment() {
-        presenter.loadFragment(FeedFragment(),this,"userFeedFragment")
+        presenter.loadFragment(FeedFragment(), this, "userFeedFragment")
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_feed -> {
-                presenter.loadFragment(FeedFragment(),this,"userFeedFragment")
+                presenter.loadFragment(FeedFragment(), this, "userFeedFragment")
                 return true
             }
             R.id.nav_profile -> {
-                presenter.loadFragment(ProfileFragment(),this,"profileFeedFragment")
+                presenter.loadFragment(ProfileFragment(), this, "profileFeedFragment")
                 return true
             }
             R.id.nav_notification -> {
-                presenter.loadFragment(NotificationFragment(),this,"notificationFeedFragment")
+                presenter.loadFragment(NotificationFragment(), this, "notificationFeedFragment")
                 return true
             }
             else -> return false
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.add_post -> {
+                startActivity(Intent(this, CreatePostActivity::class.java))
+            }
         }
     }
 }
