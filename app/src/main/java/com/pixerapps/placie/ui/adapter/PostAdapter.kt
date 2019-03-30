@@ -13,6 +13,7 @@ import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.model.PostData
 import com.pixerapps.placie.ui.activity.post.PostFullActivity
 import com.pixerapps.placie.utils.Constants
+import java.io.Serializable
 
 class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
     RecyclerView.Adapter<PostAdapter.ViewHolder>() {
@@ -73,19 +74,27 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
         override fun onClick(v: View?) {
             when (v?.id) {
                 R.id.apply_btn -> {
-                    activity.startActivity(Intent(activity, PostFullActivity(post)::class.java))
+                    val intent = Intent(activity, PostFullActivity::class.java)
+                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
+                    activity.startActivity(intent)
                 }
 
                 R.id.comment_box -> {
-                    activity.startActivity(Intent(activity, PostFullActivity(post)::class.java))
+                    val intent = Intent(activity, PostFullActivity::class.java)
+                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
+                    activity.startActivity(intent)
                 }
 
                 R.id.post_body -> {
-                    activity.startActivity(Intent(activity, PostFullActivity(post)::class.java))
+                    val intent = Intent(activity, PostFullActivity::class.java)
+                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
+                    activity.startActivity(intent)
                 }
 
                 R.id.comment_count -> {
-                    activity.startActivity(Intent(activity, PostFullActivity(post)::class.java))
+                    val intent = Intent(activity, PostFullActivity::class.java)
+                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
+                    activity.startActivity(intent)
                 }
             }
         }

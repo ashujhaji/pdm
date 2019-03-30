@@ -17,4 +17,9 @@ object Constants {
     const val USER_GID = "userGid"
     const val USER_TOKEN = "userToken"
     lateinit var USER_DETAILS : UserData
+
+
+
+    //-----------------------post constants-----------------------
+    const val POST_OBJECT = "postObject"
 }

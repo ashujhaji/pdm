@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.pixerapps.placie.R
-import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.helper.ImageHelper
 import com.pixerapps.placie.model.PostData
 import com.pixerapps.placie.mvp.BaseMvpActivity
@@ -13,12 +12,12 @@ import com.pixerapps.placie.ui.adapter.CommentAdapter
 import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.activity_full_post.*
 
-class PostFullActivity(postData: PostData) : BaseMvpActivity<PostFullContract.View, PostFullPresenter>(),
+class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresenter>(),
     PostFullContract.View, View.OnClickListener {
 
     override var presenter: PostFullPresenter = PostFullPresenter()
     var adapter: CommentAdapter? = null
-    var post: PostData = postData
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +25,11 @@ class PostFullActivity(postData: PostData) : BaseMvpActivity<PostFullContract.Vi
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         window.statusBarColor = Color.WHITE
 
-        showData(post)
+
+        if (intent.extras != null) {
+            showData(intent?.extras?.getSerializable(Constants.POST_OBJECT) as PostData)
+        }
+
 
     }
 

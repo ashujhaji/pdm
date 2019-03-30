@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.pixerapps.placie">
+          xmlns:tools="http://schemas.android.com/tools" package="com.pixerapps.placie">
 
     <application
             android:allowBackup="true"
@@ -9,7 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            android:name=".Global">
+            android:name=".Global"
+            tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.activity.authentication.AuthActivity"
                   android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.activity.user.home.HomeActivity"
@@ -26,6 +27,7 @@
                   android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.activity.post.PostFullActivity"
                   android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.createPost.CreatePostActivity"/>
     </application>
 
 </manifest>
