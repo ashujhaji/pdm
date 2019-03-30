@@ -20,7 +20,8 @@
                         android:id="@+id/toolbar"/>
                 <android.support.v7.widget.AppCompatImageView android:layout_width="@dimen/hundred_dp"
                                                               android:layout_height="@dimen/hundred_dp"
-                                                              app:srcCompat="@drawable/no_notification"/>
+                                                              app:srcCompat="@drawable/no_notification"
+                                                              android:id="@+id/user_dp"/>
                 <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
                                                              android:layout_height="wrap_content"
                                                              android:fontFamily="@font/futura"

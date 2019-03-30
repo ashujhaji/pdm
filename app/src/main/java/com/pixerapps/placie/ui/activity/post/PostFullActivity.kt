@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.pixerapps.placie.R
+import com.pixerapps.placie.authentication.CurrentUserData
+import com.pixerapps.placie.helper.ImageHelper
 import com.pixerapps.placie.model.PostData
 import com.pixerapps.placie.mvp.BaseMvpActivity
 import com.pixerapps.placie.ui.adapter.CommentAdapter
+import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.activity_full_post.*
 
 class PostFullActivity(var post: PostData) : BaseMvpActivity<PostFullContract.View, PostFullPresenter>(),
@@ -28,13 +31,14 @@ class PostFullActivity(var post: PostData) : BaseMvpActivity<PostFullContract.Vi
     }
 
     override fun showData(post: PostData) {
+        ImageHelper.loadImageWithBlurEffect(this, post_image, post.image)
         user_name.text = post.contributorName
         institution.text = post.contributorInstitute
         posted_at.text = post.createdAt.substring(0, 10)
         post_title.text = post.postTitle
         post_body.text = post.postBody
         comment_count.text = post.comments.size.toString() + " comments"
-        if (post.isJobPost.contentEquals("true")) {
+        if (post.isJobPost && post.contributorId == Constants.USER_DETAILS.instituteId) {
             apply_btn.visibility = View.VISIBLE
             apply_btn.setOnClickListener(this)
         }

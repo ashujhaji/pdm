@@ -24,7 +24,7 @@ data class PostData(
     @SerializedName("contributor_id") val contributorId: String,
     @SerializedName("contributor_institute") val contributorInstitute: String,
     @SerializedName("comments") val comments: List<Comments>,
-    @SerializedName("is_job_post") val isJobPost: String,
+    @SerializedName("is_job_post") val isJobPost: Boolean,
     @SerializedName("external_url") val externalUrl: String,
     @SerializedName("image") val image: String,
     @SerializedName("video") val video : String

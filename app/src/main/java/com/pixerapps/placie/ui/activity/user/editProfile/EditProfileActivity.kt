@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import com.pixerapps.placie.R
+import com.pixerapps.placie.helper.ImageHelper
 import com.pixerapps.placie.mvp.BaseMvpActivity
 import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.activity_user_edit_profile.*
@@ -48,29 +49,33 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
 
 
     override fun updateFieldsWithExistingData() {
-        if (Constants.USER_DETAILS.user_name!=null) {
+        if (Constants.USER_DETAILS.user_dp != null) {
+            ImageHelper.loadRoundLeader(this, user_dp, Constants.USER_DETAILS.user_dp)
+        }
+
+        if (Constants.USER_DETAILS.user_name != null) {
             edit_user_name.setText(Constants.USER_DETAILS.user_name)
         }
-        if (Constants.USER_DETAILS.user_email!=null) {
+        if (Constants.USER_DETAILS.user_email != null) {
             edit_user_email.setText(Constants.USER_DETAILS.user_email)
         }
-        if (Constants.USER_DETAILS.location!=null) {
+        if (Constants.USER_DETAILS.location != null) {
             edit_user_location.setText(Constants.USER_DETAILS.location)
         }
-        if (Constants.USER_DETAILS.location!=null) {
+        if (Constants.USER_DETAILS.location != null) {
             edit_user_location.setText(Constants.USER_DETAILS.location)
         }
-        if (Constants.USER_DETAILS.instituteId!=null) {
+        if (Constants.USER_DETAILS.instituteId != null) {
             edit_user_inst_id.setText(Constants.USER_DETAILS.instituteId)
         }
-        if (Constants.USER_DETAILS.course!=null) {
+        if (Constants.USER_DETAILS.course != null) {
             edit_user_course.setText(Constants.USER_DETAILS.course)
         }
-        if (Constants.USER_DETAILS.session!=null) {
+        if (Constants.USER_DETAILS.session != null) {
             edit_course_start.text = Constants.USER_DETAILS.session.substring(0, 4)
             edit_course_end.text = Constants.USER_DETAILS.session.substring(5)
         }
-        if (Constants.USER_DETAILS.user_bio!=null) {
+        if (Constants.USER_DETAILS.user_bio != null) {
             edit_user_bio.setText(Constants.USER_DETAILS.user_bio)
         }
 
@@ -79,7 +84,8 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.update_profile -> {
-                presenter.updateUserProfile(this,
+                presenter.updateUserProfile(
+                    this,
                     edit_user_name.text.toString(),
                     edit_user_email.text.toString(),
                     edit_user_location.text.toString(),
@@ -88,7 +94,7 @@ class EditProfileActivity : BaseMvpActivity<EditProfileActivityContract.View, Ed
                     edit_course_start.text.toString(),
                     edit_course_end.text.toString(),
                     edit_user_bio.text.toString()
-                    )
+                )
             }
         }
     }

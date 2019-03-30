@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.pixerapps.placie.R
+import com.pixerapps.placie.authentication.CurrentUserData
 import com.pixerapps.placie.model.PostData
 import com.pixerapps.placie.ui.activity.post.PostFullActivity
+import com.pixerapps.placie.utils.Constants
 
 class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
     RecyclerView.Adapter<PostAdapter.ViewHolder>() {
@@ -55,7 +57,7 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
             post_title.text = data.postTitle
             post_body.text = data.postBody
             comment_count.text = data.comments.size.toString() + " comments"
-            if (data.isJobPost.contentEquals("true")) {
+            if (data.isJobPost && data.contributorId.equals(Constants.USER_DETAILS.instituteId)) {
                 apply_btn.visibility = View.VISIBLE
                 apply_btn.setOnClickListener(this)
             }

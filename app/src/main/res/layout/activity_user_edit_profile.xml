@@ -17,7 +17,8 @@
             <android.support.v7.widget.AppCompatImageView android:layout_width="@dimen/hundred_dp"
                                                           android:layout_height="@dimen/hundred_dp"
                                                           app:srcCompat="@drawable/no_notification"
-                                                          android:layout_marginTop="@dimen/twenty_one_dp"/>
+                                                          android:layout_marginTop="@dimen/twenty_one_dp"
+                                                          android:id="@+id/user_dp"/>
             <android.support.v7.widget.AppCompatEditText android:layout_width="match_parent"
                                                          android:layout_height="wrap_content"
                                                          android:id="@+id/edit_user_name"

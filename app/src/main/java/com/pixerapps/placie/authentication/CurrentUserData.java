@@ -24,7 +24,6 @@ import java.util.List;
 public class CurrentUserData {
     private static CurrentUserData instance;
     private static FirebaseAuth mAuth;
-    public List<UserData> userData = new ArrayList<>();
 
     public static CurrentUserData getInstance() {
         mAuth = FirebaseAuth.getInstance();
@@ -34,33 +33,34 @@ public class CurrentUserData {
         return instance;
     }
 
-    public void getUserDetails(OnUserDataLoadedListener callback){
-        if (ApiClient.getClient()!=null){
+    public void getUserDetails(OnUserDataLoadedListener callback) {
+        if (ApiClient.getClient() != null) {
             Call<UserPojo> call = ApiClient.getClient().create(ApiInterface.class)
-                    .getUserDetails(MyPref.getString(Constants.USER_GID,""),
-                            MyPref.getString(Constants.USER_TOKEN,""));
+                    .getUserDetails(MyPref.getString(Constants.USER_GID, ""),
+                            MyPref.getString(Constants.USER_TOKEN, ""));
             call.enqueue(new Callback<UserPojo>() {
                 @Override
                 public void onResponse(@NonNull Call<UserPojo> call, @NonNull Response<UserPojo> response) {
-                    if (response.isSuccessful()&&response.body().getSuccess())  {
+                    if (response.isSuccessful() && response.body().getSuccess()) {
                         callback.onUserDataLoaded(response.body());
-                        Log.d("authstatus",response.body().getData().toString());
-                    }else Log.d("authstatus",response.message());
+                        Log.d("authstatus", response.body().getData().toString());
+                    } else Log.d("authstatus", response.message());
                 }
 
                 @Override
                 public void onFailure(Call<UserPojo> call, Throwable t) {
-                    Log.d("authstatus",t.getMessage());
+                    Log.d("authstatus", t.getMessage());
                 }
             });
         }
     }
 
 
-    public void logout(Activity activity){
+    public void logout(Activity activity) {
         mAuth.signOut();
-        MyPref.putString(Constants.USER_GID,"");
-        MyPref.putBoolean(Constants.IS_USER_LOGGED_IN,false);
-        activity.startActivity(new Intent(activity,AuthActivity.class));
+        MyPref.putString(Constants.USER_GID, "");
+        MyPref.putString(Constants.USER_TOKEN, "");
+        MyPref.putBoolean(Constants.IS_USER_LOGGED_IN, false);
+        activity.startActivity(new Intent(activity, AuthActivity.class));
     }
 }

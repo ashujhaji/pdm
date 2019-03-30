@@ -7,6 +7,7 @@ import android.view.*
 import android.widget.TextView
 import com.pixerapps.placie.R
 import com.pixerapps.placie.authentication.CurrentUserData
+import com.pixerapps.placie.helper.ImageHelper
 import com.pixerapps.placie.mvp.BaseMvpFragment
 import com.pixerapps.placie.ui.activity.user.home.HomeActivity
 import com.pixerapps.placie.utils.Constants
@@ -49,12 +50,13 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
     }
 
     override fun showUserDetails() {
-            user_name.text = Constants.USER_DETAILS.user_name
-            if (Constants.USER_DETAILS.user_type!=null && Constants.USER_DETAILS.college_name!=null && Constants.USER_DETAILS.location!=null) {
-                user_detail.text = Constants.USER_DETAILS.user_type + "|" +
-                        Constants.USER_DETAILS.college_name + "|" +
-                        Constants.USER_DETAILS.location
-            }
+        ImageHelper.loadRoundLeader(context!!, user_dp, Constants.USER_DETAILS.user_dp)
+        user_name.text = Constants.USER_DETAILS.user_name
+        if (Constants.USER_DETAILS.user_type != null && Constants.USER_DETAILS.college_name != null && Constants.USER_DETAILS.location != null) {
+            user_detail.text = Constants.USER_DETAILS.user_type + "|" +
+                    Constants.USER_DETAILS.college_name + "|" +
+                    Constants.USER_DETAILS.location
+        }
     }
 
     override fun showViepager() {
@@ -69,8 +71,8 @@ class ProfileFragment : BaseMvpFragment<ProfileContract.View, ProfilePresenter>(
     }
 
     override fun showLogoutDialog() {
-        val logout : TextView
-        val cancel : TextView
+        val logout: TextView
+        val cancel: TextView
         val dialog = Dialog(context!!)
         dialog.setContentView(R.layout.dialog_user_logout)
         dialog.show()
