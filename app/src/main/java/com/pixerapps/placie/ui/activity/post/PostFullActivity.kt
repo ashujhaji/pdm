@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.widget.Toast
 import com.pixerapps.placie.R
 import com.pixerapps.placie.helper.ImageHelper
 import com.pixerapps.placie.model.PostData
@@ -17,6 +18,7 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
 
     override var presenter: PostFullPresenter = PostFullPresenter()
     var adapter: CommentAdapter? = null
+    var postData: PostData? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,14 +29,17 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
 
 
         if (intent.extras != null) {
-            showData(intent?.extras?.getSerializable(Constants.POST_OBJECT) as PostData)
+            postData = intent?.extras?.get(Constants.POST_OBJECT) as PostData
+            showData(intent?.extras?.get(Constants.POST_OBJECT) as PostData)
         }
 
 
     }
 
     override fun showData(post: PostData) {
-        ImageHelper.loadImageWithBlurEffect(this, post_image, post.image)
+        if (post.image != null && post.image.isNotEmpty()) {
+            ImageHelper.loadImageWithBlurEffect(this, post_image, post.image)
+        }
         user_name.text = post.contributorName
         institution.text = post.contributorInstitute
         posted_at.text = post.createdAt.substring(0, 10)
@@ -54,11 +59,15 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
 
     }
 
+    override fun showToast(message: String) {
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+    }
+
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.apply_btn -> {
-
+                presenter.applyForJob(postData!!.postId,this)
             }
         }
     }

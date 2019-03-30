@@ -1,6 +1,7 @@
 package com.pixerapps.placie.data.remote.api;
 
 
+import com.pixerapps.placie.model.ApplyResponseModel;
 import com.pixerapps.placie.model.PostPojo;
 import com.pixerapps.placie.model.UserPojo;
 import retrofit2.Call;
@@ -47,5 +48,16 @@ public interface ApiInterface {
     @POST("api/get_all_posts")
     Call<PostPojo> getAllPosts(
         @Field("token") String token
+    );
+
+
+    @FormUrlEncoded
+    @POST("api/apply_for_job")
+    Call<ApplyResponseModel> applyForJob(
+            @Field("token") String token,
+            @Field("user_gid") String userGid,
+            @Field("user_name") String userName,
+            @Field("user_email") String userEmail,
+            @Field("post_id") String postId
     );
 }

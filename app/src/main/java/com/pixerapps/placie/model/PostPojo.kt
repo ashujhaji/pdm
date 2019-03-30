@@ -1,12 +1,13 @@
 package com.pixerapps.placie.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class PostPojo(
     @SerializedName("message") val message: String,
     @SerializedName("status") val success: Boolean,
     @SerializedName("data") val data: List<PostData>
-)
+):Serializable
 
 data class PostData(
     @SerializedName("__v") val v: String,
@@ -28,7 +29,7 @@ data class PostData(
     @SerializedName("external_url") val externalUrl: String,
     @SerializedName("image") val image: String,
     @SerializedName("video") val video : String
-)
+):Serializable
 
 data class Comments(
     @SerializedName("__v") val v: String,
@@ -38,4 +39,4 @@ data class Comments(
     @SerializedName("commented_at") val commentedAt: String,
     @SerializedName("commented_by") val commentedBy: String,
     @SerializedName("image") val image: String
-)
+):Serializable

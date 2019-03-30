@@ -29,7 +29,9 @@
                                                              android:textColor="@color/grey_600"
                                                              android:fontFamily="@font/futura"
                                                              android:textSize="@dimen/fifteen_sp"
-                                                             android:id="@+id/institution"/>
+                                                             android:id="@+id/institution"
+                                                             android:maxLines="1"
+                                                             android:ellipsize="end"/>
                 <android.support.v7.widget.AppCompatTextView android:layout_width="wrap_content"
                                                              android:layout_height="wrap_content"
                                                              android:textColor="@color/grey_600"
@@ -90,19 +92,20 @@
                                                 android:layout_height="wrap_content"
                                                 android:id="@+id/comment_recycler"/>
     </LinearLayout>
-    <EditText
+    <android.support.v7.widget.AppCompatEditText
             android:id="@+id/comment_box"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/main_toolbar_height"
+            android:layout_height="wrap_content"
             android:background="@drawable/edit_text_bg"
             android:elevation="2dp"
             android:fontFamily="@font/futura"
             android:hint="Add your comment..."
+            android:imeOptions="actionSend"
             android:paddingStart="@dimen/ten_dp"
-            android:imeOptions="actionSearch"
             android:singleLine="true"
             android:textColorHint="@color/grey_400"
-            android:textSize="@dimen/twelve_sp"
+            android:textSize="@dimen/eighteen_sp"
             android:layout_margin="@dimen/five_dp"
+            android:minHeight="@dimen/main_toolbar_height"
             android:layout_alignParentBottom="true"/>
 </RelativeLayout>

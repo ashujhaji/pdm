@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 
 abstract class BaseMvpActivity<in V: BaseMvpView, T: BaseMvpPresenter<V>> : AppCompatActivity(),BaseMvpView{
 
@@ -25,7 +26,7 @@ abstract class BaseMvpActivity<in V: BaseMvpView, T: BaseMvpPresenter<V>> : AppC
     }
 
     override fun showMessage(message: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     override fun showMessage(stringResId: Int) {
