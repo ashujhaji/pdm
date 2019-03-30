@@ -11,22 +11,17 @@
             android:theme="@style/AppTheme"
             android:name=".Global"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.activity.authentication.AuthActivity"
-                  android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ui.activity.user.home.HomeActivity"
-                  android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ui.activity.splash.SplashActivity"
-                  android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ui.activity.authentication.AuthActivity"/>
+        <activity android:name=".ui.activity.user.home.HomeActivity"/>
+        <activity android:name=".ui.activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.user.editProfile.EditProfileActivity"
-                  android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ui.activity.post.PostFullActivity"
-                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.user.editProfile.EditProfileActivity"/>
+        <activity android:name=".ui.activity.post.PostFullActivity"/>
         <activity android:name=".ui.activity.createPost.CreatePostActivity"/>
     </application>
 
