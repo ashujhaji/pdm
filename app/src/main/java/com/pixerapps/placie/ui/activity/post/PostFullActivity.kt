@@ -2,7 +2,9 @@ package com.pixerapps.placie.ui.activity.post
 
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.Toast
 import com.pixerapps.placie.R
@@ -19,6 +21,7 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
     override var presenter: PostFullPresenter = PostFullPresenter()
     var adapter: CommentAdapter? = null
     var postData: PostData? = null
+    lateinit var toolbar: Toolbar
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +30,11 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         window.statusBarColor = Color.WHITE
 
+        toolbar = findViewById(R.id.toolbar)
 
+
+
+        showToolbar()
         if (intent.extras != null) {
             postData = intent?.extras?.get(Constants.POST_OBJECT) as PostData
             showData(intent?.extras?.get(Constants.POST_OBJECT) as PostData)
@@ -61,6 +68,15 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
 
     override fun showToast(message: String) {
         Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+    }
+
+    override fun showToolbar() {
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        toolbar.title = "Post"
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.grey_800))
+        toolbar.setTitleTextAppearance(this, R.style.futuraTextAppearance)
     }
 
 

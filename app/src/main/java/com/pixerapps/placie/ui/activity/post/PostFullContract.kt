@@ -7,6 +7,7 @@ import com.pixerapps.placie.mvp.BaseMvpView
 
 object PostFullContract {
     interface View : BaseMvpView {
+        fun showToolbar()
         fun showData(post:PostData)
         fun showToast(message :String)
     }
