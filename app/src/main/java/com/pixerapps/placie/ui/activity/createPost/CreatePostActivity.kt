@@ -7,7 +7,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.Toolbar
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
@@ -24,7 +23,7 @@ class CreatePostActivity : BaseMvpActivity<CreatePostContract.View, CreatePostPr
     var postBody: EditText? = null
     lateinit var toolbar: Toolbar
     val PICK_IMAGE_REQUEST : Int = 71
-    lateinit var imageUri : Uri
+    var imageUri : Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,13 +63,23 @@ class CreatePostActivity : BaseMvpActivity<CreatePostContract.View, CreatePostPr
         when (v?.id) {
             R.id.create_post -> {
                 if (postBody!!.text.length > 3) {
-                    presenter.createPost(
-                        this,
-                        postTitle!!.text.toString(),
-                        postBody!!.text.toString(),
-                        imageUri,
-                        false
-                    )
+                    if (imageUri!=null){
+                        presenter.createPost(
+                            this,
+                            postTitle!!.text.toString(),
+                            postBody!!.text.toString(),
+                            imageUri!!,
+                            false
+                        )
+                    }else{
+                        presenter.createPost(
+                            this,
+                            postTitle!!.text.toString(),
+                            postBody!!.text.toString(),
+                            Uri.parse(""),
+                            false
+                        )
+                    }
                 } else Toast.makeText(this, "Please write something useful", Toast.LENGTH_LONG).show()
             }
 

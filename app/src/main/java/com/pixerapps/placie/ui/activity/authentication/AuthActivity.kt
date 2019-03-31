@@ -36,4 +36,9 @@ class AuthActivity : BaseMvpActivity<AuthActivityContract.View, AuthActivityPres
     override fun showAdminFragment() {
 
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
 }
