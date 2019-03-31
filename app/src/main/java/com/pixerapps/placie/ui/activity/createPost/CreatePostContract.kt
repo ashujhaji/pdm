@@ -6,7 +6,7 @@ import com.pixerapps.placie.mvp.BaseMvpView
 
 object CreatePostContract {
     interface View : BaseMvpView {
-
+        fun setToolbar()
     }
 
     interface Presenter : BaseMvpPresenter<View> {
