@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.pixerapps.placie.R
 import com.pixerapps.placie.authentication.CurrentUserData
+import com.pixerapps.placie.helper.ImageHelper
 import com.pixerapps.placie.model.PostData
 import com.pixerapps.placie.ui.activity.post.PostFullActivity
 import com.pixerapps.placie.utils.Constants
@@ -61,6 +62,10 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
             if (data.isJobPost && data.contributorId.equals(Constants.USER_DETAILS.instituteId)) {
                 apply_btn.visibility = View.VISIBLE
                 apply_btn.setOnClickListener(this)
+            }
+
+            if (data.image.length>1){
+                ImageHelper.loadRoundLeader(activity,user_dp,data.image)
             }
 
             comment_box.setOnClickListener(this)

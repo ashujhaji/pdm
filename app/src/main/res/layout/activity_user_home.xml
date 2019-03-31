@@ -5,13 +5,7 @@
                 android:layout_height="match_parent">
     <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
                  android:id="@+id/userHomeFrame"/>
-    <android.support.design.widget.FloatingActionButton android:layout_width="wrap_content"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_alignParentBottom="true"
-                                                        android:layout_alignParentRight="true"
-                                                        android:layout_marginBottom="70dp"
-                                                        android:layout_marginEnd="@dimen/ten_dp"
-                                                        android:id="@+id/add_post"/>
+
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"

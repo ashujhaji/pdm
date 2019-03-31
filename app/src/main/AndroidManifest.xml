@@ -21,8 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.user.editProfile.EditProfileActivity"/>
-        <activity android:name=".ui.activity.post.PostFullActivity"/>
-        <activity android:name=".ui.activity.createPost.CreatePostActivity"/>
+        <activity android:name=".ui.activity.post.PostFullActivity"
+        android:label="Post"/>
+        <activity android:name=".ui.activity.createPost.CreatePostActivity"
+        android:label="Post your stuff"/>
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package com.pixerapps.placie.ui.activity.user.home
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -8,15 +7,13 @@ import android.view.MenuItem
 import android.view.View
 import com.pixerapps.placie.R
 import com.pixerapps.placie.mvp.BaseMvpActivity
-import com.pixerapps.placie.ui.activity.createPost.CreatePostActivity
 import com.pixerapps.placie.ui.activity.user.home.fragments.feed.FeedFragment
 import com.pixerapps.placie.ui.activity.user.home.fragments.notification.NotificationFragment
 import com.pixerapps.placie.ui.activity.user.home.fragments.profile.ProfileFragment
-import com.pixerapps.placie.utils.Config
 import kotlinx.android.synthetic.main.activity_user_home.*
 
 class HomeActivity : BaseMvpActivity<HomeActivityContract.View, HomeActivityPresenter>(), HomeActivityContract.View,
-    BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+    BottomNavigationView.OnNavigationItemSelectedListener{
 
     override var presenter: HomeActivityPresenter = HomeActivityPresenter()
 
@@ -30,7 +27,6 @@ class HomeActivity : BaseMvpActivity<HomeActivityContract.View, HomeActivityPres
         presenter.loadUserData()
 
         bottom_navigation.setOnNavigationItemSelectedListener(this)
-        add_post.setOnClickListener(this)
     }
 
     override fun showDefaultFragment() {
@@ -55,11 +51,5 @@ class HomeActivity : BaseMvpActivity<HomeActivityContract.View, HomeActivityPres
         }
     }
 
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.add_post -> {
-                startActivity(Intent(this, CreatePostActivity::class.java))
-            }
-        }
-    }
+
 }
