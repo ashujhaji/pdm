@@ -72,4 +72,11 @@ public interface ApiInterface {
             @Field("contributor_name") String contributorName,
             @Field("contributor_institute") String contributor_institute
     );
+
+    @FormUrlEncoded
+    @POST("api/get_post_by_user")
+    Call<PostPojo> getPostByUser(
+            @Field("token") String token,
+            @Field("contributor_id") String contributorId
+    );
 }
