@@ -1,9 +1,13 @@
 package com.pixerapps.placie.ui.activity.createPost
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
@@ -19,6 +23,8 @@ class CreatePostActivity : BaseMvpActivity<CreatePostContract.View, CreatePostPr
     var postTitle: EditText? = null
     var postBody: EditText? = null
     lateinit var toolbar: Toolbar
+    val PICK_IMAGE_REQUEST : Int = 71
+    lateinit var imageUri : Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +39,7 @@ class CreatePostActivity : BaseMvpActivity<CreatePostContract.View, CreatePostPr
         setToolbar()
 
         create_post.setOnClickListener(this)
+        upload_image.setOnClickListener(this)
     }
 
     override fun setToolbar() {
@@ -61,11 +68,31 @@ class CreatePostActivity : BaseMvpActivity<CreatePostContract.View, CreatePostPr
                         this,
                         postTitle!!.text.toString(),
                         postBody!!.text.toString(),
-                        "",
+                        imageUri,
                         false
                     )
                 } else Toast.makeText(this, "Please write something useful", Toast.LENGTH_LONG).show()
             }
+
+            R.id.upload_image->{
+                chooseImage()
+            }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data?.data!=null){
+            imageUri=data.data!!
+            image_preview.setImageURI(imageUri)
+        }
+    }
+
+
+    fun chooseImage(){
+        var i = Intent()
+        i.type = "image/*"
+        i.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(i,"select image"),PICK_IMAGE_REQUEST)
     }
 }

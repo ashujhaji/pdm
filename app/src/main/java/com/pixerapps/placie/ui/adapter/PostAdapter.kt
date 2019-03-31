@@ -64,8 +64,8 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
                 apply_btn.setOnClickListener(this)
             }
 
-            if (data.image.length>1){
-                ImageHelper.loadRoundLeader(activity,user_dp,data.image)
+            if (data.image!=null&&data.image.isNotEmpty()){
+                ImageHelper.loadImageWithBlurEffect(activity,post_image,data.image)
             }
 
             comment_box.setOnClickListener(this)
@@ -97,6 +97,12 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
                 }
 
                 R.id.comment_count -> {
+                    val intent = Intent(activity, PostFullActivity::class.java)
+                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
+                    activity.startActivity(intent)
+                }
+
+                R.id.image->{
                     val intent = Intent(activity, PostFullActivity::class.java)
                     intent.putExtra(Constants.POST_OBJECT, post as Serializable)
                     activity.startActivity(intent)
