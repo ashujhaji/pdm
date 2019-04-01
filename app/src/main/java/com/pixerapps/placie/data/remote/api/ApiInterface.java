@@ -1,6 +1,7 @@
 package com.pixerapps.placie.data.remote.api;
 
 
+import com.pixerapps.placie.model.AdminPojo;
 import com.pixerapps.placie.model.ApplyResponseModel;
 import com.pixerapps.placie.model.PostPojo;
 import com.pixerapps.placie.model.UserPojo;
@@ -80,7 +81,11 @@ public interface ApiInterface {
             @Field("contributor_id") String contributorId
     );
 
-//    @FormUrlEncoded
-//    @POST("api/create_admin")
-//    Call<> registerAsAdmin();
+    @FormUrlEncoded
+    @POST("api/create_admin")
+    Call<AdminPojo> registerAsAdmin(
+            @Field("center_code") String centerCode,
+            @Field("password") String password,
+            @Field("institution_name") String instituteName
+    );
 }

@@ -7,6 +7,7 @@ object AdminFragmentContract {
     interface View : BaseMvpView {
         fun showProgress()
         fun showAlert(message : String)
+        fun hideProgress()
     }
 
     interface Presenter : BaseMvpPresenter<View> {

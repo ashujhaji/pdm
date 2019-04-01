@@ -36,6 +36,10 @@ class AdminFragment : BaseMvpFragment<AdminFragmentContract.View, AdminFragmentP
         Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
 
+    override fun hideProgress() {
+        progressBar.visibility = View.GONE
+    }
+
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.login->{
