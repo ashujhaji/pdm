@@ -94,6 +94,7 @@
                                                                  android:id="@+id/registerPwd"
                                                                  android:fontFamily="@font/futura"
                                                                  android:background="@drawable/bg_round_light"
+                                                                 android:inputType="textPassword"
                                                                  android:gravity="center"/>
                     <TextView android:layout_width="@dimen/two_hundred_dp" android:layout_height="@dimen/forty_dp"
                               android:text="@string/register"

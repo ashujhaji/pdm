@@ -43,7 +43,7 @@ class AdminFragment : BaseMvpFragment<AdminFragmentContract.View, AdminFragmentP
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.login->{
-                presenter.login(loginUname.text.toString(),loginPwd.text.toString())
+                presenter.login(activity!!,loginUname.text.toString(),loginPwd.text.toString())
             }
 
             R.id.register->{

@@ -88,4 +88,11 @@ public interface ApiInterface {
             @Field("password") String password,
             @Field("institution_name") String instituteName
     );
+
+    @FormUrlEncoded
+    @POST("api/login_admin")
+    Call<AdminPojo> loginAdmin(
+            @Field("center_code") String centerCode,
+            @Field("password") String password
+    );
 }

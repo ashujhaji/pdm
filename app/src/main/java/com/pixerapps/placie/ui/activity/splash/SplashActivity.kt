@@ -11,9 +11,9 @@ class SplashActivity : BaseMvpActivity<SplashContract.View, SplashPresenter>(),S
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        setContentView(R.layout.activity_splash)
         presenter.moveToNextActivity(this)
     }
 }
