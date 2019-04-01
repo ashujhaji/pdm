@@ -79,4 +79,8 @@ public interface ApiInterface {
             @Field("token") String token,
             @Field("contributor_id") String contributorId
     );
+
+//    @FormUrlEncoded
+//    @POST("api/create_admin")
+//    Call<> registerAsAdmin();
 }

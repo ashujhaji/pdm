@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.fragment_auth_admin.*
 
 class AdminFragment : BaseMvpFragment<AdminFragmentContract.View, AdminFragmentPresenter>(), AdminFragmentContract.View,
     View.OnClickListener {
+
     override fun showProgress() {
         progressBar.visibility = View.VISIBLE
     }
