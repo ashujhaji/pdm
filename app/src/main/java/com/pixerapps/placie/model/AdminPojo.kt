@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class AdminPojo (
     @SerializedName("message") val message: String,
     @SerializedName("status") val success: Boolean,
-    @SerializedName("data") val data: List<UserData>
+    @SerializedName("data") val data: List<AdminData>
 )
 
 data class AdminData(

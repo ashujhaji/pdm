@@ -32,6 +32,8 @@ class AdminFragmentPresenter : BaseMvpPresenterImpl<AdminFragmentContract.View>(
                             mView?.hideProgress()
                             mView?.showAlert("Successfully Logged in!")
                             MyPref.putBoolean(Constants.IS_ADMIN_LOGGED_IN,true)
+                            MyPref.putString(Constants.USER_TOKEN,response.body()!!.data[0].token)
+                            MyPref.putString(Constants.ADMIN_ID,response.body()!!.data[0].centerCode)
                             activity.startActivity(Intent(activity,MainActivity::class.java))
                         }else mView?.showAlert("Login failed")
                     }

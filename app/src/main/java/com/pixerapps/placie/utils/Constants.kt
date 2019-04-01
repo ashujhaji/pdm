@@ -1,5 +1,6 @@
 package com.pixerapps.placie.utils
 
+import com.pixerapps.placie.model.AdminData
 import com.pixerapps.placie.model.UserData
 
 object Constants {
@@ -17,6 +18,9 @@ object Constants {
     const val USER_GID = "userGid"
     const val USER_TOKEN = "userToken"
     lateinit var USER_DETAILS : UserData
+
+    const val ADMIN_ID = "adminId"
+    lateinit var ADMIN_DETAILS : AdminData
 
 
 

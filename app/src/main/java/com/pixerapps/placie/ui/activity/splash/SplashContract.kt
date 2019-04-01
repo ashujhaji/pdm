@@ -11,5 +11,6 @@ object SplashContract {
     interface Presenter : BaseMvpPresenter<View> {
         fun moveToNextActivity(activity: Activity)
         fun loadUserData(activity: Activity)
+        fun loadAdminData(activity: Activity)
     }
 }

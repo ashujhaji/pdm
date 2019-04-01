@@ -95,4 +95,11 @@ public interface ApiInterface {
             @Field("center_code") String centerCode,
             @Field("password") String password
     );
+
+    @FormUrlEncoded
+    @POST("api/get_admin")
+    Call<AdminPojo> getAdminData(
+            @Field("center_code") String centerCode,
+            @Field("token") String token
+    );
 }
