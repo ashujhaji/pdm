@@ -87,4 +87,10 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
             }
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(R.anim.stay,R.anim.slide_out_down)
+    }
 }

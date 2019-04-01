@@ -79,35 +79,32 @@ class PostAdapter(var list: List<PostData>, var activity: FragmentActivity) :
         override fun onClick(v: View?) {
             when (v?.id) {
                 R.id.apply_btn -> {
-                    val intent = Intent(activity, PostFullActivity::class.java)
-                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
-                    activity.startActivity(intent)
+                    moveToNextActivity()
                 }
 
                 R.id.comment_box -> {
-                    val intent = Intent(activity, PostFullActivity::class.java)
-                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
-                    activity.startActivity(intent)
+                    moveToNextActivity()
                 }
 
                 R.id.post_body -> {
-                    val intent = Intent(activity, PostFullActivity::class.java)
-                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
-                    activity.startActivity(intent)
+                    moveToNextActivity()
                 }
 
                 R.id.comment_count -> {
-                    val intent = Intent(activity, PostFullActivity::class.java)
-                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
-                    activity.startActivity(intent)
+                    moveToNextActivity()
                 }
 
                 R.id.image->{
-                    val intent = Intent(activity, PostFullActivity::class.java)
-                    intent.putExtra(Constants.POST_OBJECT, post as Serializable)
-                    activity.startActivity(intent)
+                    moveToNextActivity()
                 }
             }
+        }
+
+        fun moveToNextActivity(){
+            val intent = Intent(activity, PostFullActivity::class.java)
+            intent.putExtra(Constants.POST_OBJECT, post as Serializable)
+            activity.startActivity(intent)
+            activity.overridePendingTransition(R.anim.slide_in_up,R.anim.stay)
         }
     }
 }
