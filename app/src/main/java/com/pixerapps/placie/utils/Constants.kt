@@ -26,4 +26,5 @@ object Constants {
 
     //-----------------------post constants-----------------------
     const val POST_OBJECT = "postObject"
+    const val JOB_OBJECT = "jobObject"
 }

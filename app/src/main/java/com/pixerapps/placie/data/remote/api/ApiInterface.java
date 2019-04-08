@@ -1,10 +1,7 @@
 package com.pixerapps.placie.data.remote.api;
 
 
-import com.pixerapps.placie.model.AdminPojo;
-import com.pixerapps.placie.model.ApplyResponseModel;
-import com.pixerapps.placie.model.PostPojo;
-import com.pixerapps.placie.model.UserPojo;
+import com.pixerapps.placie.model.*;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -110,5 +107,12 @@ public interface ApiInterface {
             @Field("post_id") String postId,
             @Field("comment_body") String commentBody,
             @Field("commented_by") String commentedBy
+    );
+
+    @FormUrlEncoded
+    @POST("api/get_all_jobs_by_institute")
+    Call<JobPojo> getJobsByInstitute(
+            @Field("center_code") String centerCode,
+            @Field("token") String token
     );
 }
