@@ -26,6 +26,7 @@
         <activity android:name=".ui.activity.createPost.CreatePostActivity"
         android:label="Post your stuff"/>
         <activity android:name=".ui.activity.admin.main.MainActivity"/>
+        <activity android:name=".ui.activity.applicants.ApplicantActvity"/>
     </application>
 
 </manifest>
