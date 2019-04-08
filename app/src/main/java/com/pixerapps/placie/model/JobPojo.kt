@@ -32,8 +32,8 @@ data class JobData(
 data class Applications(
     @SerializedName("__v") val v: String,
     @SerializedName("_id") val id: String,
-    @SerializedName("user_gid") val postId: String,
-    @SerializedName("user_name") val postBody: String,
-    @SerializedName("user_email") val postTitle: String,
-    @SerializedName("is_rejected") val category: String
+    @SerializedName("user_gid") val userGid: String,
+    @SerializedName("user_name") val userName: String,
+    @SerializedName("user_email") val userEmail: String,
+    @SerializedName("is_rejected") val isRejected: String
 ):Serializable
