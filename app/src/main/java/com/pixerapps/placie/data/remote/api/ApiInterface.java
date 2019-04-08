@@ -88,7 +88,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("api/login_admin")
-    Call<AdminPojo> loginAdmin(
+    Call<AdminData> loginAdmin(
             @Field("center_code") String centerCode,
             @Field("password") String password
     );

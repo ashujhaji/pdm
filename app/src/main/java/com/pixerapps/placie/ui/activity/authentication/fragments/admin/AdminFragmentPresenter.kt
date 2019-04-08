@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v4.app.FragmentActivity
 import com.pixerapps.placie.data.remote.api.ApiClient
 import com.pixerapps.placie.data.remote.api.ApiInterface
+import com.pixerapps.placie.model.AdminData
 import com.pixerapps.placie.model.AdminPojo
 import com.pixerapps.placie.mvp.BaseMvpPresenterImpl
 import com.pixerapps.placie.ui.activity.admin.main.MainActivity
@@ -26,20 +27,21 @@ class AdminFragmentPresenter : BaseMvpPresenterImpl<AdminFragmentContract.View>(
             if (ApiClient.getClient() != null) {
                 val call = ApiClient.getClient().create(ApiInterface::class.java)
                     .loginAdmin(username,password)
-                call.enqueue(object : Callback<AdminPojo> {
-                    override fun onResponse(call: Call<AdminPojo>, response: Response<AdminPojo>) {
-                        if (response.isSuccessful && response.body()!!.success) {
+                call.enqueue(object : Callback<AdminData> {
+                    override fun onResponse(call: Call<AdminData>, response: Response<AdminData>) {
+                        if (response.isSuccessful) {
                             mView?.hideProgress()
                             mView?.showAlert("Successfully Logged in!")
                             MyPref.putBoolean(Constants.IS_ADMIN_LOGGED_IN,true)
-                            MyPref.putString(Constants.USER_TOKEN,response.body()!!.data[0].token)
-                            MyPref.putString(Constants.ADMIN_ID,response.body()!!.data[0].centerCode)
+                            Constants.ADMIN_DETAILS = response.body()!!
+                            MyPref.putString(Constants.USER_TOKEN,response.body()!!.token)
+                            MyPref.putString(Constants.ADMIN_ID,response.body()!!.centerCode)
                             activity.startActivity(Intent(activity,MainActivity::class.java))
                         }else mView?.showAlert("Login failed")
                     }
 
-                    override fun onFailure(call: Call<AdminPojo>, t: Throwable) {
-                        mView?.showAlert("Login failed")
+                    override fun onFailure(call: Call<AdminData>, t: Throwable) {
+                        mView?.showAlert(t.message!!)
                     }
                 })
             }
