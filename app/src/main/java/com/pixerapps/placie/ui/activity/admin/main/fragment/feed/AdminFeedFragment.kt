@@ -9,16 +9,18 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import com.pixerapps.placie.R
+import com.pixerapps.placie.model.JobData
 import com.pixerapps.placie.model.PostData
 import com.pixerapps.placie.mvp.BaseMvpFragment
 import com.pixerapps.placie.ui.activity.createPost.CreatePostActivity
+import com.pixerapps.placie.ui.adapter.JobAdapter
 import com.pixerapps.placie.ui.adapter.PostAdapter
 import kotlinx.android.synthetic.main.fragment_user_feed.*
 import kotlinx.android.synthetic.main.fragment_user_feed.view.*
 
 class AdminFeedFragment : BaseMvpFragment<AdminFeedContract.View, AdminFeedPresenter>(), AdminFeedContract.View, View.OnClickListener {
     override var presenter: AdminFeedPresenter = AdminFeedPresenter()
-    var adapter: PostAdapter? = null
+    var adapter: JobAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         activity!!.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
@@ -33,8 +35,8 @@ class AdminFeedFragment : BaseMvpFragment<AdminFeedContract.View, AdminFeedPrese
         add_post.setOnClickListener(this)
     }
 
-    override fun showPosts(postData: List<PostData>, view: View) {
-        adapter = PostAdapter(postData, activity!!)
+    override fun showPosts(postData: List<JobData>, view: View) {
+        adapter = JobAdapter(postData, activity!!)
         val linearLayoutManager = LinearLayoutManager(activity)
         view.data_recyclerview.layoutManager = linearLayoutManager
         view.data_recyclerview.adapter = adapter

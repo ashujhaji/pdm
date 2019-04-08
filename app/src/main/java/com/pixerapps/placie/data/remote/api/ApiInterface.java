@@ -1,10 +1,7 @@
 package com.pixerapps.placie.data.remote.api;
 
 
-import com.pixerapps.placie.model.AdminPojo;
-import com.pixerapps.placie.model.ApplyResponseModel;
-import com.pixerapps.placie.model.PostPojo;
-import com.pixerapps.placie.model.UserPojo;
+import com.pixerapps.placie.model.*;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -99,6 +96,13 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("api/get_admin")
     Call<AdminPojo> getAdminData(
+            @Field("center_code") String centerCode,
+            @Field("token") String token
+    );
+
+    @FormUrlEncoded
+    @POST("api/get_all_jobs_by_institute")
+    Call<JobPojo> getJobsByInstitute(
             @Field("center_code") String centerCode,
             @Field("token") String token
     );
