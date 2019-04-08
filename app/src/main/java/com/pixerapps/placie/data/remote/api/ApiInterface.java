@@ -102,4 +102,13 @@ public interface ApiInterface {
             @Field("center_code") String centerCode,
             @Field("token") String token
     );
+
+    @FormUrlEncoded
+    @POST("api/add_comment_on_post")
+    Call<PostPojo> addComment(
+            @Field("token") String token,
+            @Field("post_id") String postId,
+            @Field("comment_body") String commentBody,
+            @Field("commented_by") String commentedBy
+    );
 }

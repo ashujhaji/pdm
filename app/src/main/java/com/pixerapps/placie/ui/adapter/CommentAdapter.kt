@@ -25,7 +25,7 @@ class CommentAdapter(var list: List<Comments>, var activity: Activity) :
         p0.bindData(list[p1], p1)
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         var currentPos: Int = 0
 
@@ -33,7 +33,6 @@ class CommentAdapter(var list: List<Comments>, var activity: Activity) :
         var user_dp: ImageView = itemView.findViewById(R.id.user_dp)
         var user_name: TextView = itemView.findViewById(R.id.user_name)
         var comment: TextView = itemView.findViewById(R.id.comment)
-        var apply_btn: TextView = itemView.findViewById(R.id.apply_btn)
 
         fun bindData(data: Comments, pos: Int) {
             this.currentPos = pos
@@ -41,17 +40,10 @@ class CommentAdapter(var list: List<Comments>, var activity: Activity) :
             user_name.text = data.commentedBy
             comment.text = data.commentBody
 
-            apply_btn.setOnClickListener(this)
 
         }
 
 
-        override fun onClick(v: View?) {
-            when (v?.id) {
-                R.id.apply_btn -> {
 
-                }
-            }
-        }
     }
 }

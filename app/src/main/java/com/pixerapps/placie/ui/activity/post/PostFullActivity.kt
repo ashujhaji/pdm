@@ -5,15 +5,19 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
+import android.view.KeyEvent
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.pixerapps.placie.R
 import com.pixerapps.placie.helper.ImageHelper
+import com.pixerapps.placie.model.Comments
 import com.pixerapps.placie.model.PostData
 import com.pixerapps.placie.mvp.BaseMvpActivity
 import com.pixerapps.placie.ui.adapter.CommentAdapter
 import com.pixerapps.placie.utils.Constants
 import kotlinx.android.synthetic.main.activity_full_post.*
+import java.util.*
 
 class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresenter>(),
     PostFullContract.View, View.OnClickListener {
@@ -22,6 +26,7 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
     var adapter: CommentAdapter? = null
     var postData: PostData? = null
     lateinit var toolbar: Toolbar
+    var comments = ArrayList<Comments>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +46,21 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
         }
 
 
+        comment_box.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+                presenter.addComment(postData!!.postId, comment_box.text.toString())
+                return@OnKeyListener true
+            }
+            false
+        })
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item!!.itemId == android.R.id.home) {
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun showData(post: PostData) {
@@ -58,7 +78,8 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
             apply_btn.setOnClickListener(this)
         }
 
-        adapter = CommentAdapter(post.comments, this)
+        comments = post.comments as ArrayList<Comments>
+        adapter = CommentAdapter(comments, this)
         val linearLayoutManager = LinearLayoutManager(this)
         comment_recycler.layoutManager = linearLayoutManager
         comment_recycler.adapter = adapter
@@ -67,7 +88,7 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
     }
 
     override fun showToast(message: String) {
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     override fun showToolbar() {
@@ -83,7 +104,7 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.apply_btn -> {
-                presenter.applyForJob(postData!!.postId,this)
+                presenter.applyForJob(postData!!.postId, this)
             }
         }
     }
@@ -91,6 +112,10 @@ class PostFullActivity : BaseMvpActivity<PostFullContract.View, PostFullPresente
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
-        overridePendingTransition(R.anim.stay,R.anim.slide_out_down)
+        overridePendingTransition(R.anim.stay, R.anim.slide_out_down)
+    }
+
+    override fun refreshActivity() {
+        onBackPressed()
     }
 }
